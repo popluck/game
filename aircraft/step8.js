@@ -105,7 +105,7 @@ window.onload = function(){
 		var e = evt || window.event;
 		// 获取鼠标移动时的位置
 		var mouse_x = e.x || e.pageX || evt.changedTouches[0].clientX
-		,	mouse_y = e.y || e.pageY || evt.changedTouches[0].client
+		,	mouse_y = e.y || e.pageY || evt.changedTouches[0].clientY
 
 		// 计算得到鼠标移动时Y己方飞机的左上边距
 		var last_myPlane_left = mouse_x - gameML - myPlaneW/2
