@@ -111,7 +111,7 @@ window.onload = function(){
 		var last_myPlane_left = mouse_x - gameML - myPlaneW/2
 		,	last_myPlane_top = mouse_y - gameMT - myPlaneH/2;
 		// 控制飞机不能脱离当前的游戏界面
-		if(last_myPlane_left <= 0){
+		if(last_myPlane_left <= 0){Y
 			last_myPlane_left = 0;
 		}else if(last_myPlane_left >= gameW - myPlaneW){
 			last_myPlane_left = gameW - myPlaneW;
