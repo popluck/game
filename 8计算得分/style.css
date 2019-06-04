@@ -1,0 +1,99 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow-y: hidden;
+}
+#game{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+}
+#gameStart{
+	width: 100%;
+	height: 100%;
+	background: url(image/ks.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	/*display: none;*/
+}
+#gameStart span{
+	width: 260px;
+	height: 60px;
+	display: block;
+	background:orange;
+	border: 2px solid #fff;
+	border-radius: 20px;
+	background-image: linear-gradient(yellow,#D58A36);
+	box-shadow: 0 10px 0 #361A12;
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bolder;
+	position: absolute;
+	left: 50%;
+	margin-left: -130px;
+	bottom: 100px;
+	cursor: pointer;
+}
+#gameStart span:hover{
+	background-image: linear-gradient(yellow,orange);
+
+}
+#gameEnter{
+	width: 100%;
+	height: 100%;
+	background: url(image/bg.jpg);
+	background-position: 100%;
+	background-repeat: repeat;
+	background-size: cover;
+	position: relative;
+	display: none;
+}
+#myPlane{
+	width: 100px;
+	height: 83px;
+	position: absolute;
+	left: 127px;
+	bottom: 0;
+	cursor: pointer;
+}
+
+#myPlane img{
+	cursor: move;
+}
+#bullets,#enemys{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.zidan{
+	width: 6px;
+	height: 14px;
+	position: absolute;
+}
+.e{
+	position: absolute;
+}
+#scores{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 24px;
+	font-weight: bolder;
+	padding: 0 20px;
+	color:#fff
+}
+#scores p{
+	text-align: right;
+	width: 80%;
+}
