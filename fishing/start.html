@@ -95,7 +95,7 @@
 
 //					
 					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}');
-					alert('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}')
+//					alert('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}')
 					
 				};
 			}
@@ -106,7 +106,8 @@
 			}
 			//数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
 			ws.onmessage = function(msg) {
-				console.log(msg, 1)
+
+				alert(msg, 1)
 				// 类型改变
 				if(msg.data) {
 					var data = JSON.parse(msg.data).nrong;
