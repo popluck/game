@@ -26,29 +26,23 @@
 	<script type="text/javascript" src="jquery-3.1.1.min.js" ></script>
 	<script type="text/javascript">
 window.onload=function(){
-	 let code=getUrlKey("code");
+	if(localStorage.getItem('code')){
+		 let code=getUrlKey("code");
+	 localStorage.setItem('code',code)
 		           if(code){
-				   alert(code+'1111')
+				   alert(code)
 		           $.get(
 		           	"http://mq.soratech.cn/stores/public/game/index/openid",{
 		           		code:code
 		           	},function(res){
-		           		alert(res)
+	 localStorage.setItem('openid',res)
 		           	}
 		           )
-		             	 //调用接口获取openId   参考文档https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
-						getOpenIdApi(code).then(res=>{
-								let openId=res.openId;
-								window.location.replace("/#/login");
-								alert(openId)
-						}).catch(res=>{
-							  window.location.replace("/#/login");
-								alert(openId)
-							  
-						})
 				   }else{
 				   	     getCodeApi("123");
 				   }
+	}
+	 
 
 }
 //alert(document.cookie)
