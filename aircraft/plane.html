@@ -23,49 +23,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="jquery-3.1.1.min.js" ></script>
-	<script type="text/javascript">
-window.onload=function(){
-	 let code=getUrlKey("code");
-		           if(code){
-				   alert(code)
-				   var wxdata=localStorage.getItem('wxdata')
-				   if(wxdata){
-				   	$.get(
-		           	"http://mq.soratech.cn/stores/public/game/index/openid",{
-		           		code:code
-		           	},function(res){
-		           		alert(res)
-		           		localStorage.setItem('wxdata',res)
-		           	}
-		           )
-				   }
-		           
-		             	 //调用接口获取openId   参考文档https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
-//						getOpenIdApi(code).then(res=>{
-//								let openId=res.openId;
-//								window.location.replace("/#/login");
-//								alert(openId)
-//						}).catch(res=>{
-//							  window.location.replace("/#/login");
-//						})
-				   }else{
-				   	     getCodeApi("123");
-				   }
-
-}
-//alert(document.cookie)
-function getUrlKey(name){//获取url 参数
-   return decodeURIComponent((new RegExp('[?|&]'+name+'='+'([^&;]+?)(&|#|;|$)').exec(location.href)||[,""])[1].replace(/\+/g,'%20'))||null;
- }
-function getCodeApi(state){//获取code   
-     let urlNow=encodeURIComponent(window.location.href);
-//   alert(window.location.href)
-     let scope='snsapi_userinfo';    //snsapi_userinfo   //静默授权 用户无感知snsapi_base
-     let appid='wxfd06f76da71ca6db';
-     let url=`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${urlNow}&response_type=code&scope=${scope}&state=${state}#wechat_redirect`;
-     window.location.replace(url);
-}
-	</script>
+	
 </body>
 </html>
