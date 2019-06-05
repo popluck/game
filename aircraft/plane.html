@@ -67,7 +67,7 @@
 window.onload=function(){
 	 let code=getUrlKey("code");
 		           if(code){
-				   alert(code)
+				   alert(code,1)
 		           	
 		             	 //调用接口获取openId   参考文档https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
 						getOpenIdApi(code).then(res=>{
@@ -78,10 +78,10 @@ window.onload=function(){
 						})
 				   }else{
 				   	     getCodeApi("123");
-				   alert(code)
+				   alert(code,2)
 				   	     
 				   }
-				   alert(code)
+				   alert(code,3)
 }
 //alert(document.cookie)
 function getUrlKey(name){//获取url 参数
