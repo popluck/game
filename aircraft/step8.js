@@ -5,7 +5,7 @@ window.onload = function() {
 	if(code) {
 		//				   alert(code)
 		
-			document.get(
+			$.get(
 				"http://mq.soratech.cn/stores/public/game/index/openid", {
 					code: code
 				},
