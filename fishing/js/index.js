@@ -8,6 +8,7 @@
 		user: wxdata,
 		},
 		function(res) {
+			alert(res)
 			console.log(1)
 		})
 
