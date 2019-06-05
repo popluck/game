@@ -74,7 +74,7 @@
 			var fishing_name = ''; // 奖励微信昵称
 			var fishing_sex = ''; // 奖励微信性别
 			var fishing_coupons = 'couponsOne'; // 优惠券
-			var wxdata=localStorage.getItem('wxdata')
+			var wxdata=JSON.parse(localStorage.getItem('wxdata'))
 			var openid = wxdata.openid; // 用户id
 			var nickname = wxdata.nickname; // 用户昵称
 			var sex = wxdata.sex; // 用户性别
