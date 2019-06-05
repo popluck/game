@@ -28,20 +28,19 @@ window.onload=function(){
 	 let code=getUrlKey("code");
 		           if(code){
 				   alert(code+'1111')
-		           	
+		           
 		             	 //调用接口获取openId   参考文档https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
 						getOpenIdApi(code).then(res=>{
 								let openId=res.openId;
 								window.location.replace("/#/login");
+								alert(openId)
 						}).catch(res=>{
 							  window.location.replace("/#/login");
 						})
 				   }else{
 				   	     getCodeApi("123");
-				   alert(code+'222222')
-				   	     
 				   }
-				   alert(code+'3333')
+
 }
 //alert(document.cookie)
 function getUrlKey(name){//获取url 参数
