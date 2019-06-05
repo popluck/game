@@ -3,7 +3,7 @@ window.onload = function(){
 		           if(code){
 //				   alert(code)
 				   var wxdata=localStorage.getItem('wxdata')
-				   if(wxdata){
+				   if(!wxdata){
 					   	document.get(
 			           	"http://mq.soratech.cn/stores/public/game/index/openid",{
 			           		code:code
@@ -14,6 +14,54 @@ window.onload = function(){
 				   }
 				   }else{
 				   	     getCodeApi("123");
+				   	     // 开始游戏
+	gameStart.firstElementChild.onclick = function(){
+		gameStart.style.display = "none";
+		gameEnter.style.display = "block";
+		// 给当前的文档添加键盘事件
+		document.ontouchstart = function(evt){
+//			var e = evt || window.event;
+//			// 获取到键盘的键值
+//			var keyVal = e.keyCode;
+//			if(keyVal == 32){
+				if(!gameStatus){
+					// 开始游戏
+//					this.onmousemove = myPlaneMove;
+					this.addEventListener('touchmove',myPlaneMove,false)
+					// 实现射击
+					shot();
+					// 出现敌机
+					// 实现开始游戏之后背景图的运动
+					bgMove();
+					appearEnemy();
+					// 暂停游戏之后的开始游戏
+					// 子弹的继续运动
+                    //游戏开始的时候bullets本来就是空,在经过下面很多代码运行后才有值 所以可以判断一下是否有值 否则有点不符合逻辑
+					if(bullets.length != 0) reStart(bullets,1);
+					//游戏开始的时候enemys本来就是空,在经过下面很多代码运行后才有值 所以可以判断一下是否有值 否则有点不符合逻辑
+					// 敌机的继续运动
+					if(enemys.length != 0) reStart(enemys);
+				}
+//				else{
+//					// 暂停游戏
+//					this.onmousemove = null;
+//					// 清除创建敌机和创建子弹的定时器
+//					clearInterval(a);
+//					clearInterval(b);
+//					a = null;
+//					b = null;
+//					//清除背景图的运动
+//					clearInterval(c);
+//					
+//					c = null;
+//					clear(bullets);
+//					clear(enemys);
+//				}
+				gameStatus = true;
+			
+		}
+	}
+	
 				   }
 	function getUrlKey(name){//获取url 参数
    return decodeURIComponent((new RegExp('[?|&]'+name+'='+'([^&;]+?)(&|#|;|$)').exec(location.href)||[,""])[1].replace(/\+/g,'%20'))||null;
@@ -78,53 +126,6 @@ function getCodeApi(state){//获取code
 	;
 
 
-	// 开始游戏
-	gameStart.firstElementChild.onclick = function(){
-		gameStart.style.display = "none";
-		gameEnter.style.display = "block";
-		// 给当前的文档添加键盘事件
-		document.ontouchstart = function(evt){
-//			var e = evt || window.event;
-//			// 获取到键盘的键值
-//			var keyVal = e.keyCode;
-//			if(keyVal == 32){
-				if(!gameStatus){
-					// 开始游戏
-//					this.onmousemove = myPlaneMove;
-					this.addEventListener('touchmove',myPlaneMove,false)
-					// 实现射击
-					shot();
-					// 出现敌机
-					// 实现开始游戏之后背景图的运动
-					bgMove();
-					appearEnemy();
-					// 暂停游戏之后的开始游戏
-					// 子弹的继续运动
-                    //游戏开始的时候bullets本来就是空,在经过下面很多代码运行后才有值 所以可以判断一下是否有值 否则有点不符合逻辑
-					if(bullets.length != 0) reStart(bullets,1);
-					//游戏开始的时候enemys本来就是空,在经过下面很多代码运行后才有值 所以可以判断一下是否有值 否则有点不符合逻辑
-					// 敌机的继续运动
-					if(enemys.length != 0) reStart(enemys);
-				}
-//				else{
-//					// 暂停游戏
-//					this.onmousemove = null;
-//					// 清除创建敌机和创建子弹的定时器
-//					clearInterval(a);
-//					clearInterval(b);
-//					a = null;
-//					b = null;
-//					//清除背景图的运动
-//					clearInterval(c);
-//					
-//					c = null;
-//					clear(bullets);
-//					clear(enemys);
-//				}
-				gameStatus = true;
-			
-		}
-	}
 	
 	
 	
