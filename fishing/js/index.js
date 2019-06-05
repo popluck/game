@@ -1,7 +1,8 @@
-window.onload = function() {
+//window.onload = function() {
 
 	$('.model_index')[0].addEventListener('click', dianji, false)
 	var wxdata = localStorage.getItem('wxdata')
+	alert(wxdata)
 	$.post(
 		"http://mq.soratech.cn/web_sock/public/index/index/user_insert",{
 		user: wxdata,
@@ -14,4 +15,4 @@ window.onload = function() {
 		$('.model_index')[0].style.display = 'none'
 	}
 
-}
+//}

@@ -1,13 +1,13 @@
 window.onload = function() {
-		var wxcode = localStorage.getItem('code')
-		if(!wxdata) {
+
+
 	
+	var wxdata = localStorage.getItem('wxdata')
+		if(!wxdata) {
 	let code = getUrlKey("code");
 	if(code) {
 		//				   alert(code)
-
-
-			document.get(
+			$.get(
 				"http://mq.soratech.cn/stores/public/game/index/openid", {
 					code: code
 				},
@@ -15,9 +15,12 @@ window.onload = function() {
 					//			           		alert(res)
 					localStorage.setItem('wxdata', res)
 				})
-		}
+
 	} else {
 		getCodeApi("123");
+		
+
+		}
 	}
 
 	function getUrlKey(name) { //获取url 参数
