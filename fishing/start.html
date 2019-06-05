@@ -200,7 +200,7 @@
 				}
 				// 发消息
 				if(a == rand) {
-					ws.send("nr=moveRope")
+					ws.send('{"type":"msg","content":"moveRope"}')
 				}
 				// 获得奖品
 				if(type == 'coupons') {
