@@ -74,10 +74,11 @@
 			var fishing_name = ''; // 奖励微信昵称
 			var fishing_sex = ''; // 奖励微信性别
 			var fishing_coupons = 'couponsOne'; // 优惠券
-			var openid = 'osMntsgeYclxPrMl7F8mZ3hbJRIk'; // 用户id
-			var nickname = '杨福'; // 用户昵称
-			var sex = '1'; // 用户性别
-			var head = 'http://thirdwx.qlogo.cn/mmopen/vi_32/ydQX6UbSCURDQJY1hFCvl8QUpep2mo5Cy2OG7WeUOXhkAGPvlOLBT6xm6dyIYvAsWO22HOFK89hMjPXhlia3yPQ/132' // 用户图像
+			var wxdata=localStorage.getItem('wxdata')
+			var openid = wxdata.openid; // 用户id
+			var nickname = wxdata.nickname; // 用户昵称
+			var sex = wxdata.sex; // 用户性别
+			var head = wxdata.headimgurl// 用户图像
 
 			var btn = $('.start_btn')[0];
 			var img = $('.start_fish')[0];
