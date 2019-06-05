@@ -92,7 +92,10 @@
 			ws.onopen = function() {
 				//状态为1证明握手成功，然后把client自定义的名字发送过去
 				if(ws.readyState == 1) {
-					ws.send(`{"type":"add","name":${nickname},"openid":${openid},"head":${head},"role":"2"}`);
+					alert(`{"type":"add","name":${nickname},"openid":${openid},"head":${head},"role":"2"}`)
+					alert('{"type":"add","name":'+nickname+',"openid":'+openid+',"head":'+head+',"role":"2"}')
+					
+					ws.send('{"type":"add","name":'+nickname+',"openid":'+openid+',"head":'+head+',"role":"2"}');
 				};
 			}
 			//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
