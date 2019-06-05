@@ -94,8 +94,8 @@
 				if(ws.readyState == 1) {
 
 //					
-					ws.send('{"type":"add","name":'+String(nickname)+',"openid":'+String(openid)+',"head":'+String(head)+',"role":"2"}');
-					alert('{"type":"add","name":'+String(nickname)+',"openid":'+String(openid)+',"head":'+String(head)+',"role":"2"}')
+					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","role":"2"}');
+					alert('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","role":"2"}')
 					
 				};
 			}
