@@ -79,7 +79,7 @@
 			var nickname = wxdata.nickname; // 用户昵称
 			var sex = wxdata.sex; // 用户性别
 			var head = wxdata.headimgurl// 用户图像
-            var room = ''
+            var room = localStorage.getItem('room')
 			var btn = $('.start_btn')[0];
 			var img = $('.start_fish')[0];
 			var a = 1; //点击数
@@ -94,7 +94,7 @@
 				if(ws.readyState == 1) {
 
 //					
-					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2","room":"2"}');
+					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2","room":"'+room+'"}');
 //					alert('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}')
 					
 				};
@@ -200,7 +200,7 @@
 				}
 				// 发消息
 				if(a == rand) {
-					ws.send('{"type":"msg","content":"moveRope","room":"2"}')
+					ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')
 				}
 				// 获得奖品
 				if(type == 'coupons') {
