@@ -12,12 +12,12 @@ var fishing_img = ''; // 奖励着微信图像
 var fishing_name = ''; // 奖励微信昵称
 var fishing_sex = ''; // 奖励微信性别
 var fishing_coupons = 'couponsOne'; // 优惠券
-//var wxdata = JSON.parse(localStorage.getItem('wxdata'))
-//var openid = wxdata.openid; // 用户id
-//var nickname = wxdata.nickname; // 用户昵称
-//var sex = wxdata.sex; // 用户性别
-//var head = wxdata.headimgurl // 用户图像
-
+var wxdata = JSON.parse(localStorage.getItem('wxdata'))
+var openid = wxdata.openid; // 用户id
+var nickname = wxdata.nickname; // 用户昵称
+var sex = wxdata.sex; // 用户性别
+var head = wxdata.headimgurl // 用户图像
+var room = localStorage.getItem('room')
 var a = 1; //点击数
 var rand; //随机次数
 var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
@@ -25,7 +25,7 @@ var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 ws.onopen = function() {
 	//状态为1证明握手成功，然后把client自定义的名字发送过去
 	if(ws.readyState == 1) {			
-		ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2"}');
+		ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2","room":"'+room+'"}');
 	};
 }
 //握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
@@ -85,7 +85,7 @@ function changProgress() {
 		progressBar.style.height = H + '%';
 	} else {
 		progressBar.style.height = '100%';
-		ws.send('{"type":"msg","content":"moveRope"}')	
+		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'}')	
 	}
 	// 获得奖品
 	if(type == 'coupons') {

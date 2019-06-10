@@ -84,29 +84,21 @@
 			var img = $('.start_fish')[0];
 			var a = 1; //点击数
 			var rand; //随机次数
-
 			$('.warehouse_name')[0].innerText = nickname
-
 			var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 			// 握手函数
 			ws.onopen = function() {
 				//状态为1证明握手成功，然后把client自定义的名字发送过去
 				if(ws.readyState == 1) {
-
-//					
-					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2","room":"'+room+'"}');
-//					alert('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}')
-					
+					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2","room":"'+room+'"}');			
 				};
 			}
 			//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
 			ws.onclose = function() {
-//				ws.send('type=remove&ming=' + nickname + '&head=' + head + '&role=2&sex=' + sex + '&openid=' + openid);
 				ws = false;
 			}
 			//数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
 			ws.onmessage = function(msg) {
-
 				alert(msg, 1)
 				// 类型改变
 				if(msg.data) {
@@ -133,13 +125,10 @@
 					} catch(e) {}
 				}
 			}
-//			$('.model3')[0].addEventListener("click", wind)
-//			$(document).style.cursor='pointer'
 			function wind() {
 				$('.model3')[0].style.display = 'none'
 			}
 			// 手机摇一摇判断
-			
 			if(window.DeviceMotionEvent) {
 				var speed = 25;
 				var x = y = z = lastX = lastY = lastZ = 0;
@@ -160,12 +149,10 @@
 			$('.model_colse')[0].addEventListener('click', btninit, false)
 			$('.model_btn4')[0].addEventListener('click', btninit, false)
 			btn.addEventListener('click', shake)
-
 			function btninit() {
 				$('.model1')[0].style.display = 'none';
 				$('.model2')[0].style.display = 'none';
 				$('.model4')[0].style.display = 'none';
-				
 				window.location.href = "index.html"
 				btn.addEventListener('click', shake)
 			}
@@ -173,12 +160,10 @@
 				$('.model4')[0].style.display = 'block';				
 				btn.addEventListener('click', shake)
 			}
-			
 			// 按钮点击事件
 			function shake() {
 				console.log('点击数：'+a)
 				console.log('随机数：'+rand)
-
 				if(a == 1) {
 					// 随机最大点击次数				
 					rand = Math.floor(Math.random() * 10 + 3);
@@ -190,11 +175,9 @@
 					$('.start_jiyou')[0].style.display='none'
 						
 						img.src = "./imgaes/start/start_fish.png";
-
 					} else {
 						img.src = "./imgaes/start/start_fish2.png";
 					$('.start_jiyou')[0].style.display='block'
-
 					}
 					a++
 				}
