@@ -94,14 +94,14 @@
 				if(ws.readyState == 1) {
 
 //					
-					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}');
+					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2","room":"2"}');
 //					alert('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2"}')
 					
 				};
 			}
 			//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
 			ws.onclose = function() {
-				ws.send('type=remove&ming=' + nickname + '&head=' + head + '&role=2&sex=' + sex + '&openid=' + openid);
+//				ws.send('type=remove&ming=' + nickname + '&head=' + head + '&role=2&sex=' + sex + '&openid=' + openid);
 				ws = false;
 			}
 			//数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
@@ -200,7 +200,7 @@
 				}
 				// 发消息
 				if(a == rand) {
-					ws.send('{"type":"msg","content":"moveRope"}')
+					ws.send('{"type":"msg","content":"moveRope","room":"1"}')
 				}
 				// 获得奖品
 				if(type == 'coupons') {

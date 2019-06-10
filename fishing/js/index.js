@@ -1,5 +1,11 @@
 //window.onload = function() {
-
+var btn = document.querySelector('.btn')
+			btn.addEventListener('touchstart',function(){
+				btn.style.transform='scale(0.8)'
+			})
+			btn.addEventListener('touchend',function(){
+				btn.style.transform='scale(1)'
+			})
 	$('.model_index')[0].addEventListener('click', dianji, false)
 	var wxdata = localStorage.getItem('wxdata')
 	alert(wxdata)

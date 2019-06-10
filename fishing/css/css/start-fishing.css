@@ -1,0 +1,91 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+body{
+	overflow-y: hidden;
+}
+#bkg{
+	width: 100%;
+	height: 100%;
+	background-image: url(../../image/start-fishing/钓鱼BG.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.fishing-rod{
+	width: 48%;
+	position: absolute;
+	bottom: 0;
+	left: 16%;
+}
+#turntable{
+	width:40%;
+	position: absolute;
+	display: inline-block;
+	bottom: 6%;
+	left: 44%;
+}
+.circle{
+	width: 100%;
+	transform: rotateZ(0deg);
+	transition: all 0.25s;
+}
+.btn{
+	width: 50%;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	z-index: 10;
+}
+.gan{
+	width: 70%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translate(-18px,1px);
+}
+.gan-bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotateZ(0deg);
+	transition: all 0.25s;
+}
+@keyframes rod{
+	from{
+		transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+.progress-bar{
+	width: 3%;
+	height: 45%;
+	position: absolute;
+	top: 25%;
+	left: 5%;
+	background: #ffa405;
+	border-radius: 10px;
+	padding: 2px;
+	transform: rotateZ(180deg);
+}
+.progress-bg{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	border-radius: 10px;
+	padding: 2px;
+	box-sizing: border-box;
+}
+.progress{
+	width: 100%;
+	height: 0%;
+	background: linear-gradient(to bottom ,#fff, #f67727);
+	border-radius: 10px;
+	transition: all 1s;
+}
