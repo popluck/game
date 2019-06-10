@@ -7,7 +7,7 @@ btn.addEventListener('touchstart', function() {
 btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 })
-$('.model_index')[0].addEventListener('click', dianji, false)
+//$('.model_index')[0].addEventListener('click', dianji, false)
 var wxdata = localStorage.getItem('wxdata')
 alert(wxdata)
 localStorage.setItem('room',GetQueryString('id'))
@@ -21,9 +21,9 @@ $.post(
 		console.log(1)
 	})
 
-function dianji() {
-	$('.model_index')[0].style.display = 'none'
-}
+//function dianji() {
+//	$('.model_index')[0].style.display = 'none'
+//}
 
 function GetQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
