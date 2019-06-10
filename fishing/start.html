@@ -79,7 +79,7 @@
 			var nickname = wxdata.nickname; // 用户昵称
 			var sex = wxdata.sex; // 用户性别
 			var head = wxdata.headimgurl// 用户图像
-
+            var room = ''
 			var btn = $('.start_btn')[0];
 			var img = $('.start_fish')[0];
 			var a = 1; //点击数
@@ -280,7 +280,17 @@
 					}
 				)
 			}
-
+			// 请求房间号
+			function getroom(){
+				$.get(
+					"mq.soratech.cn/stores/public/index/index/get_rommid?stores_name=dfdf",
+					{},
+					function(data){
+						console.log(data)
+					}
+				)
+			}
+			getroom()
 			function init() { // 初始化
 				addType() // 请求添加数据
 
