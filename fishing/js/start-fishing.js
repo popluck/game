@@ -85,7 +85,7 @@ function changProgress() {
 		progressBar.style.height = H + '%';
 	} else {
 		progressBar.style.height = '100%';
-		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'}')	
+		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')	
 	}
 	// 获得奖品
 	if(type == 'coupons') {
