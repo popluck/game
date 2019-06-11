@@ -6,7 +6,7 @@ window.onload = function() {
 //		if(!wxdata) {
 	let code = getUrlKey("code");
 	if(code) {
-						   alert(code,1)
+						   alert('code:'+code)
 			$.get(
 				"http://mq.soratech.cn/stores/public/game/index/openid", {
 					code: code

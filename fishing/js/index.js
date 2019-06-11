@@ -9,7 +9,7 @@ btn.addEventListener('touchend', function() {
 },false)
 // 用户微信信息
 var wxdata = localStorage.getItem('wxdata')
-alert(wxdata)
+alert('微信信息”'+wxdata)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))
 //alert(localStorage.getItem('room'))
