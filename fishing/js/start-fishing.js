@@ -129,3 +129,8 @@ function init() {
 	type = '';
 	navigator.vibrate(1000); // 手机震动
 }
+const imgMask = document.getElementsByTagName('img');
+imgMask.addEventListener('click', function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+});
