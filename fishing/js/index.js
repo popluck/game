@@ -1,5 +1,8 @@
 // 钓鱼按钮
 var btn = document.querySelector('.btn')
+localStorage.setItem('room', GetQueryString('id'))
+alert(localStorage.getItem('room'))
+alert(localStorage.getItem('code'))
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
 }, false)
@@ -7,11 +10,7 @@ btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 }, false)
 // 用户微信信息
-
 // 门店id
-localStorage.setItem('room', GetQueryString('id'))
-alert(localStorage.getItem('room'))
-alert(localStorage.getItem('code'))
 var imgURL = 0;
 var imgXS = 0
 var imgXS1 = 1
