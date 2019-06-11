@@ -8,7 +8,15 @@ btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 },false)
 // 用户微信信息
-var wxdata = localStorage.getItem('wxdata')
+$.get(
+				"http://mq.soratech.cn/stores/public/game/index/openid", {
+					code: code
+				},
+				function(res) {
+								           		alert(res,2)
+					localStorage.setItem('wxdata', res)
+				})
+
 alert('微信信息”'+wxdata)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))
@@ -17,7 +25,7 @@ localStorage.setItem('room',GetQueryString('id'))
 // 加入游戏
 $.post(
 	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
-		user: wxdata,
+		user: localStorage.getItem('wxdata'),
 	},
 	function(res) {
 		alert(res)
