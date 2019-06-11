@@ -80,31 +80,35 @@ if(window.DeviceMotionEvent) {
 // 点击事件----进度条
 function changProgress() {
 	var rerandom = Math.floor(Math.random() * 20);
+	if(H==0){
+		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')	
+	}
 	H = H + rerandom
 	if(H < 100) {
 		progressBar.style.height = H + '%';
 	} else {
 		progressBar.style.height = '100%';
-		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')	
-	}
-	// 获得奖品
-	if(type == 'coupons') {
-		alert(type)
-		init()
-	}
-	if(type == 'prize') {
-		alert(type)
-		init()
-	}
-	if(type == 'wechat') {
-		if(fishing_sex == sex) {
-			alert(type,fishing_sex)
+		// 获得奖品
+		if(type == 'coupons') {
+			alert(type)
+			init()
 		}
-		if(fishing_sex != sex) {
-			alert(type,fishing_sex)
+		if(type == 'prize') {
+			alert(type)
+			init()
 		}
-		init()
+		if(type == 'wechat') {
+			if(fishing_sex == sex) {
+				alert(type,fishing_sex)
+			}
+			if(fishing_sex != sex) {
+				alert(type,fishing_sex)
+			}
+			init()
+		}
+
 	}
+	
 }
 // 转盘
 function turntable() {
