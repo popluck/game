@@ -12,7 +12,7 @@ window.onload = function() {
 					code: code
 				},
 				function(res) {
-					//			           		alert(res)
+								           		alert(res)
 					localStorage.setItem('wxdata', res)
 				})
 
