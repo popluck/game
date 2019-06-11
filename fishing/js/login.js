@@ -14,8 +14,9 @@ window.onload = function() {
 					code: code
 				},
 				function(res) {
-								           		alert(res,2)
+					alert(res,2)
 					localStorage.setItem('wxdata', res)
+					
 				})
 
 	} else {
