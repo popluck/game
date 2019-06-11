@@ -162,6 +162,8 @@
 			}
 			// 按钮点击事件
 			function shake() {
+				alert(a)
+				alert(rand)
 				console.log('点击数：'+a)
 				console.log('随机数：'+rand)
 				if(a == 1) {
@@ -187,8 +189,7 @@
 					ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"，"openid":"'+openid+'"}')
 					alert('{"type":"msg","content":"moveRope","room":"'+room+'"，"openid":"'+openid+'"}')
 				}
-				alert(a)
-				alert(rand)
+				
 				// 获得奖品
 				if(type == 'coupons') {
 					img.src = "./imgaes/start/start_fish.png";
