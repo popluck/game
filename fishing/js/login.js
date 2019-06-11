@@ -8,17 +8,23 @@ window.onload = function() {
 	if(code) {
 						   alert('code:'+code)
 					localStorage.setItem('code', code)
+getOpenIdApi(code).then(res=>{
+								let openId=res.openId;
+								window.location.replace("/#/login");
+						}).catch(res=>{
+							  window.location.replace("/#/login");
+						})
 						   
-//			$.get(
-//				"http://mq.soratech.cn/stores/public/game/index/openid", {
-//					code: code
-//				},
-//				function(res) {
-//					console.log(res)
-//					alert(res,2)
-//					localStorage.setItem('wxdata', res)
-//					
-//				})
+			$.get(
+				"http://mq.soratech.cn/stores/public/game/index/openid", {
+					code: code
+				},
+				function(res) {
+					console.log(res)
+					alert(res,2)
+					localStorage.setItem('wxdata', res)
+					
+				})
 	} else {
 		getCodeApi("123");
 		}
