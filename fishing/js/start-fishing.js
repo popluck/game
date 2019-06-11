@@ -81,7 +81,8 @@ if(window.DeviceMotionEvent) {
 function changProgress() {
 	var rerandom = Math.floor(Math.random() * 20);
 	if(H==0){
-		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')	
+		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')
+		alert('{"type":"msg","content":"moveRope","room":"'+room+'"}')
 	}
 	H = H + rerandom
 	if(H < 100) {
