@@ -3,6 +3,18 @@ var btn = document.querySelector('.btn')
 localStorage.setItem('room', GetQueryString('id'))
 alert(localStorage.getItem('room'))
 alert(localStorage.getItem('code'))
+var code=localStorage.getItem('code')
+$.get(
+					"http://mq.soratech.cn/stores/public/game/index/openid", {
+						code: code
+					},
+					function(res) {
+						console.log(res)
+						alert(res, 2)
+						localStorage.setItem('wxdata', res)
+						alert('微信信息”' + wxdata)
+
+					})
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
 }, false)
