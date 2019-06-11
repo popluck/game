@@ -247,6 +247,19 @@
 					}
 				)
 			}
+			function getda(){
+				$.get(
+				"http://mq.soratech.cn/stores/public/game/index/openid", {
+					code: localStorage.getItem('code')
+				},
+				function(res) {
+					console.log(res)
+					alert(res,2)
+					localStorage.setItem('wxdata', res)
+					
+				})
+			}
+			getda()
 			// 发出请求添加数据
 			function addType() {
 				$.post(

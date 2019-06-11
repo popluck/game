@@ -13,9 +13,12 @@ alert('微信信息”'+wxdata)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))
 //alert(localStorage.getItem('room'))
-$.get(
+var code=localStorage.getItem('code')
+if(code){
+					alert(2)
+	$.get(
 				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: localStorage.getItem('code')
+					code: code
 				},
 				function(res) {
 					console.log(res)
@@ -23,6 +26,8 @@ $.get(
 					localStorage.setItem('wxdata', res)
 					
 				})
+}
+
 // 加入游戏
 $.post(
 	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
