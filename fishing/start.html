@@ -183,7 +183,7 @@
 				}
 				// 发消息
 				if(a == rand) {
-					ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"}')
+					ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"，"openid":"'+openid+'"}')
 				}
 				// 获得奖品
 				if(type == 'coupons') {
