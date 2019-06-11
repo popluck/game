@@ -84,8 +84,6 @@
 			var img = $('.start_fish')[0];
 			var a = 1; //点击数
 			var rand; //随机次数
-			abc()
-			psota()
 			$('.warehouse_name')[0].innerText = nickname
 			var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 			// 握手函数
@@ -281,33 +279,6 @@
 				btn.removeEventListener('click', shake, false) // 移除事件
 				navigator.vibrate(1000); // 手机震动
 			}
-
-//			function abc() {
-//
-//				$.get(
-//					"http://mq.soratech.cn/stores/public/game/index/openid", {
-//						code: localStorage.getItem('code')
-//					},
-//					function(res) {
-//						console.log(res)
-//						alert(res, 2)
-//						localStorage.setItem('wxdata', res)
-//						wxdata=JSON.parse(localStorage.getItem('wxdata'))
-//						alert('微信信息”' + wxdata)
-//
-//					})
-//				}
-//				// 加入游戏
-//				function psota() {
-//					$.post(
-//						"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
-//							user: wxdata,
-//						},
-//						function(res) {
-//							alert(res)
-//							console.log(1)
-//						})
-//				}
 		</script>
 	</body>
 
