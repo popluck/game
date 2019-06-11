@@ -81,8 +81,14 @@ if(window.DeviceMotionEvent) {
 function changProgress() {
 	var rerandom = Math.floor(Math.random() * 20);
 	if(H==0){
-		ws.send('{"type":"msg","content":"moveRope","room":"'+room+'","openid":"'+openid+'"}')
-		alert('{"type":"msg","content":"moveRope","room":"'+room+'","openid":"'+openid+'"}')
+		var sendDate={
+			"type":"msg",
+			"content":"moveRope",
+			"room":room,
+			"openid":openid
+		}
+		ws.send(JSON.stringify(sendDate))
+		alert(JSON.stringify(sendDate))
 	}
 	H = H + rerandom
 	if(H < 100) {

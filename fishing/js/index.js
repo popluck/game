@@ -11,10 +11,10 @@ window.onload=function(){
 var btn = document.querySelector('.btn')
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
-})
+},false)
 btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
-})
+},false)
 // 用户微信信息
 var wxdata = localStorage.getItem('wxdata')
 //alert(wxdata)
