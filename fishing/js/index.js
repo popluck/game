@@ -1,4 +1,5 @@
-window.requestAnimFrame = (function () {
+window.onload=function(){
+	window.requestAnimFrame = (function () {
         return window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame ||
@@ -80,4 +81,6 @@ function start(){
 	console.log(imgXS)
 	requestAnimationFrame(start,Element)
 }
-start()
+//start()
+}
+
