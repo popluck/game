@@ -11,6 +11,7 @@ btn.addEventListener('touchend', function() {
 // 门店id
 localStorage.setItem('room', GetQueryString('id'))
 alert(localStorage.getItem('room'))
+alert(localStorage.getItem('code'))
 var imgURL = 0;
 var imgXS = 0
 var imgXS1 = 1
