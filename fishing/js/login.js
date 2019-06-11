@@ -2,8 +2,8 @@ window.onload = function() {
 
 
 	
-	var wxdata = localStorage.getItem('wxdata')
-		if(!wxdata) {
+//	var wxdata = localStorage.getItem('wxdata')
+//		if(!wxdata) {
 	let code = getUrlKey("code");
 	if(code) {
 						   alert(code,1)
@@ -19,7 +19,7 @@ window.onload = function() {
 	} else {
 		getCodeApi("123");
 		}
-	}
+	
 
 	function getUrlKey(name) { //获取url 参数
 		return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
