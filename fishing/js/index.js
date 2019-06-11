@@ -11,28 +11,6 @@ btn.addEventListener('touchend', function() {
 // 门店id
 localStorage.setItem('room', GetQueryString('id'))
 alert(localStorage.getItem('room'))
-// 加入游戏
-
-$.get(
-	"http://mq.soratech.cn/stores/public/game/index/openid", {
-		code: localStorage.getItem('code')
-	},
-	function(res) {
-		console.log(res)
-		alert(res, 2)
-		localStorage.setItem('wxdata', res)
-		var wxdata = localStorage.getItem('wxdata')
-		alert('微信信息”' + wxdata)
-
-		$.post(
-			"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
-				user: wxdata,
-			},
-			function(res) {
-				alert(res)
-				console.log(1)
-			})
-	})
 var imgURL = 0;
 var imgXS = 0
 var imgXS1 = 1

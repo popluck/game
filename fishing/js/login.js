@@ -1,4 +1,4 @@
-window.onload = function() {
+//window.onload = function() {
 
 
 	
@@ -7,6 +7,13 @@ window.onload = function() {
 	let code = getUrlKey("code");
 	if(code) {
 						   alert('code:'+code)
+						   $.get(
+						   	'http://mq.soratech.cn/stores/public/game/index/openid',{
+						   		code:code
+						   	},function(res){
+						   		alert(res)
+						   	}
+						   )
 					localStorage.setItem('code', code)	   
 	} else {
 		getCodeApi("123");
@@ -26,4 +33,4 @@ window.onload = function() {
 		window.location.replace(url);
 	}
 
-}
+//}
