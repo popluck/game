@@ -8,14 +8,14 @@ btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 },false)
 // 用户微信信息
-$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: code
-				},
-				function(res) {
-								           		alert(res,2)
-					localStorage.setItem('wxdata', res)
-				})
+//$.get(
+//			"http://mq.soratech.cn/stores/public/game/index/openid", {
+//					code: code
+//				},
+//				function(res) {
+//								           		alert(res,2)
+//					localStorage.setItem('wxdata', res)
+//				})
 
 alert('微信信息”'+wxdata)
 // 门店id
