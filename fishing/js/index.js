@@ -13,7 +13,16 @@ alert('微信信息”'+wxdata)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))
 //alert(localStorage.getItem('room'))
-
+$.get(
+				"http://mq.soratech.cn/stores/public/game/index/openid", {
+					code: localStorage.getItem('code')
+				},
+				function(res) {
+					console.log(res)
+					alert(res,2)
+					localStorage.setItem('wxdata', res)
+					
+				})
 // 加入游戏
 $.post(
 	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
@@ -22,9 +31,6 @@ $.post(
 	function(res) {
 		alert(res)
 		console.log(1)
-		$('.down').addEventListener('click',function(){
-			window.location.href='start.html'
-		},false)
 	})
 var imgURL=0;
 var imgXS=0

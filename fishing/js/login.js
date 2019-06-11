@@ -14,6 +14,7 @@
 					code: code
 				},
 				function(res) {
+					console.log(res)
 					alert(res,2)
 					localStorage.setItem('wxdata', res)
 					
