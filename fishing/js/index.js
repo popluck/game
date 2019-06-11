@@ -37,8 +37,13 @@ function imgload(){
 //	$('.img1').eq(imgXS).css('background-image','url(image/index/shouye_'+imgURL+'.png)')
 //	$('.img1').eq(imgXS+1).css('background-image','url(image/index/shouye_'+(imgURL+1)+'.png)')
 //	$('.img1').eq(imgXS+2).css('background-image','url(image/index/shouye_'+(imgURL+2)+'.png)')
-	$('.img1').eq(imgXS).css('background-image','url(image/index/shouye_'+imgURL+'.png)')
+    if(imgXS==2){
+    	
+    }else{
 	$('.img1').eq(imgXS).next().css('background-image','url(image/index/shouye_'+(imgURL+1)+'.png)')
+    	
+    }
+
 	imgURL=imgURL<99?imgURL+1:0
 
 }
