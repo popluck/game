@@ -1,4 +1,3 @@
-
 // 钓鱼按钮
 var btn = document.querySelector('.btn')
 btn.addEventListener('touchstart', function() {
@@ -14,19 +13,6 @@ alert('微信信息”'+wxdata)
 localStorage.setItem('room',GetQueryString('id'))
 //alert(localStorage.getItem('room'))
 var code=localStorage.getItem('code')
-if(code){
-					alert(2)
-	$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: code
-				},
-				function(res) {
-					console.log(res)
-					alert(res,2)
-					localStorage.setItem('wxdata', res)
-					
-				})
-}
 
 // 加入游戏
 $.post(
