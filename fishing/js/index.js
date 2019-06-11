@@ -82,12 +82,5 @@ function start(){
 	requestAnimationFrame(start,Element)
 }
 //start()
-
-
-const imgMask = document.getElementById('mask');
-imgMask.addEventListener('click', function (event) {
-    event.stopPropagation();
-    event.preventDefault();
-});
 }
 
