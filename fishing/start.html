@@ -14,7 +14,7 @@
 		<section id="start">
 			<img src="./imgaes/start/BG.png" class="img-responsive start_back" alt="php" />
 			<img src="./imgaes/start/start_fish.png" id="start_fish" class="img-responsive start_fish" alt="php" />
-			<img class="start_jiyou" src="imgaes/start/矢量智能对象.png"/>
+			<img class="start_jiyou" src="imgaes/start/矢量智能对象.png" />
 			<a class=" start_btn" id="start_btn" href="javascript:;"><img src="./imgaes/start/start_btn.png" class="img-responsive " alt="php" /></a>
 		</section>
 		<!-- Modal -->
@@ -74,23 +74,25 @@
 			var fishing_name = ''; // 奖励微信昵称
 			var fishing_sex = ''; // 奖励微信性别
 			var fishing_coupons = 'couponsOne'; // 优惠券
-			var wxdata=JSON.parse(localStorage.getItem('wxdata'))
+			var wxdata = ''
 			var openid = wxdata.openid; // 用户id
 			var nickname = wxdata.nickname; // 用户昵称
 			var sex = wxdata.sex; // 用户性别
-			var head = wxdata.headimgurl// 用户图像
-            var room = localStorage.getItem('room')
+			var head = wxdata.headimgurl // 用户图像
+			var room = localStorage.getItem('room')
 			var btn = $('.start_btn')[0];
 			var img = $('.start_fish')[0];
 			var a = 1; //点击数
 			var rand; //随机次数
+			abc()
+			psota()
 			$('.warehouse_name')[0].innerText = nickname
 			var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 			// 握手函数
 			ws.onopen = function() {
 				//状态为1证明握手成功，然后把client自定义的名字发送过去
 				if(ws.readyState == 1) {
-					ws.send('{"type":"add","name":"'+nickname+'","openid":"'+openid+'","head":"'+head+'","sex":"'+sex+'","role":"2","room":"'+room+'"}');			
+					ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2","room":"' + room + '"}');
 				};
 			}
 			//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
@@ -125,6 +127,7 @@
 					} catch(e) {}
 				}
 			}
+
 			function wind() {
 				$('.model3')[0].style.display = 'none'
 			}
@@ -148,45 +151,47 @@
 			$('.warehouse_btn')[0].addEventListener('click', sendTo, false)
 			$('.model_colse')[0].addEventListener('click', btninit, false)
 			$('.model_btn4')[0].addEventListener('click', btninit, false)
-			btn.addEventListener('click', shake,false)
+			btn.addEventListener('click', shake, false)
+
 			function btninit() {
 				$('.model1')[0].style.display = 'none';
 				$('.model2')[0].style.display = 'none';
 				$('.model4')[0].style.display = 'none';
 				window.location.href = "index.html"
-				btn.addEventListener('click', shake,false)
+				btn.addEventListener('click', shake, false)
 			}
-			function sendTo(){
-				$('.model4')[0].style.display = 'block';				
-				btn.addEventListener('click', shake,false)
+
+			function sendTo() {
+				$('.model4')[0].style.display = 'block';
+				btn.addEventListener('click', shake, false)
 			}
 			// 按钮点击事件
 			function shake() {
 				alert(1)
-				console.log('点击数：'+a)
-				console.log('随机数：'+rand)
+				console.log('点击数：' + a)
+				console.log('随机数：' + rand)
 				if(a == 1) {
 					// 随机最大点击次数				
 					rand = Math.floor(Math.random() * 10 + 3);
 					img.src = "./imgaes/start/start_fish2.png";
-					$('.start_jiyou')[0].style.display='block'
+					$('.start_jiyou')[0].style.display = 'block'
 					a++
 				} else {
 					if(a % 2 == 0) {
-					$('.start_jiyou')[0].style.display='none'
-						
+						$('.start_jiyou')[0].style.display = 'none'
+
 						img.src = "./imgaes/start/start_fish.png";
 					} else {
 						img.src = "./imgaes/start/start_fish2.png";
-					$('.start_jiyou')[0].style.display='block'
+						$('.start_jiyou')[0].style.display = 'block'
 					}
 					a++
 				}
 				// 发消息
 				if(a == rand) {
-					ws.send('{"type":"msg","content":"moveRope","room":"'+room+'"，"openid":"'+openid+'"}')
-					alert('{"type":"msg","content":"moveRope","room":"'+room+'"，"openid":"'+openid+'"}')
-				}	
+					ws.send('{"type":"msg","content":"moveRope","room":"' + room + '"，"openid":"' + openid + '"}')
+					alert('{"type":"msg","content":"moveRope","room":"' + room + '"，"openid":"' + openid + '"}')
+				}
 				// 获得奖品
 				if(type == 'coupons') {
 					img.src = "./imgaes/start/start_fish.png";
@@ -196,34 +201,34 @@
 					init()
 				}
 				if(type == 'prize') {
-					prize = 'prize' + String(Math.floor(Math.random() * 5-0.5) + 1)
+					prize = 'prize' + String(Math.floor(Math.random() * 5 - 0.5) + 1)
 					img.src = "./imgaes/start/start_fish.png";
 					$('.model_gilf')[0].src = "imgaes/start_last/" + prize + '.png';
 					a = 1
 					$('.model1')[0].style.display = 'block';
 					init()
 				}
-								if(type=='wechat'){	
-									if(fishing_sex==sex){
-										img.src = "./imgaes/start/start_fish.png";
-										$('.warehouse_img')[0].src='imgaes/start/基友卡.png';
-										$('.img1')[0].src='imgaes/start/框框2.png';
-										$('.img2')[0].src=fishing_img;
-										$('.warehouse_name')[0].innerText=fishing_name
-										a = 1
-									}
-									if(fishing_sex!=sex){
-										img.src = "./imgaes/start/start_fish.png";
-										$('.warehouse_img')[0].src='imgaes/start/桃花卡.png';
-										$('.img1')[0].src='imgaes/start/框框.png';
-										$('.img2')[0].src=fishing_img;
-										$('.warehouse_name')[0].innerText=fishing_name
-										a = 1
-									}
-								$('.model2')[0].style.display='block';
-								console.log(sex,fishing_sex,fishing_name)
-										 init()	
-								}
+				if(type == 'wechat') {
+					if(fishing_sex == sex) {
+						img.src = "./imgaes/start/start_fish.png";
+						$('.warehouse_img')[0].src = 'imgaes/start/基友卡.png';
+						$('.img1')[0].src = 'imgaes/start/框框2.png';
+						$('.img2')[0].src = fishing_img;
+						$('.warehouse_name')[0].innerText = fishing_name
+						a = 1
+					}
+					if(fishing_sex != sex) {
+						img.src = "./imgaes/start/start_fish.png";
+						$('.warehouse_img')[0].src = 'imgaes/start/桃花卡.png';
+						$('.img1')[0].src = 'imgaes/start/框框.png';
+						$('.img2')[0].src = fishing_img;
+						$('.warehouse_name')[0].innerText = fishing_name
+						a = 1
+					}
+					$('.model2')[0].style.display = 'block';
+					console.log(sex, fishing_sex, fishing_name)
+					init()
+				}
 			}
 			// 查询信息
 			function selType(id) {
@@ -239,7 +244,6 @@
 							fishing_name = data.name;
 							console.log(data)
 
-							
 						} catch(e) {
 							//TODO handle the exception
 						}
@@ -247,20 +251,7 @@
 					}
 				)
 			}
-			function getda(){
-				alert(111)
-				$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: localStorage.getItem('code')
-				},
-				function(res) {
-					console.log(res)
-					alert(res,2)
-					localStorage.setItem('wxdata', res)
-					
-				})
-			}
-			getda()
+
 			// 发出请求添加数据
 			function addType() {
 				$.post(
@@ -279,16 +270,43 @@
 					}
 				)
 			}
+
 			function init() { // 初始化
 				addType() // 请求添加数据
 
-//				ws.send('')
+				//				ws.send('')
 
 				type = '';
 
-				btn.removeEventListener('click', shake,false) // 移除事件
+				btn.removeEventListener('click', shake, false) // 移除事件
 				navigator.vibrate(1000); // 手机震动
 			}
+
+			function abc() {
+
+				$.get(
+					"http://mq.soratech.cn/stores/public/game/index/openid", {
+						code: localStorage.getItem('code')
+					},
+					function(res) {
+						console.log(res)
+						alert(res, 2)
+						localStorage.setItem('wxdata', res)
+						wxdata=JSON.parse(localStorage.getItem('wxdata'))
+						alert('微信信息”' + wxdata)
+
+					})
+				// 加入游戏
+				function psota() {
+					$.post(
+						"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
+							user: wxdata,
+						},
+						function(res) {
+							alert(res)
+							console.log(1)
+						})
+				}
 		</script>
 	</body>
 
