@@ -60,8 +60,8 @@ ws.onmessage = function(msg) {
 	}
 }
 
-btn.addEventListener('click', changProgress)
-btn.addEventListener('click', turntable)
+btn.addEventListener('touchstart', changProgress)
+btn.addEventListener('touchstart', turntable)
 // 手机摇一摇判断
 if(window.DeviceMotionEvent) {
 	var speed = 25;
