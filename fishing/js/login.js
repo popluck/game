@@ -7,14 +7,7 @@ window.onload = function() {
 	let code = getUrlKey("code");
 	if(code) {
 						   alert('code:'+code)
-					localStorage.setItem('code', code)
-getOpenIdApi(code).then(res=>{
-								let openId=res.openId;
-								window.location.replace("/#/login");
-						}).catch(res=>{
-							  window.location.replace("/#/login");
-						})
-						   
+					localStorage.setItem('code', code)	   
 			$.get(
 				"http://mq.soratech.cn/stores/public/game/index/openid", {
 					code: code
