@@ -19,9 +19,7 @@ btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 })
 // 门店id
-if(localStorage.getItem('room')==null ){
 localStorage.setItem('room',GetQueryString('id'))	
-}
 var imgXS=0
 // 地址栏参数获取
 function GetQueryString(name) {
