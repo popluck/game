@@ -236,7 +236,7 @@
 						$('.model1')[0].style.display = 'block';
 						init()
 					}
-					if(type == 'wechat') {
+					if(type == 'wechat' && fishing_sex!='') {
 						if(fishing_sex == sex) {
 							img.src = "./imgaes/start/start_fish.png";
 							$('.warehouse_img')[0].src = 'imgaes/start/基友卡.png';
@@ -307,7 +307,7 @@
 
 
 					type = '';
-
+                    fishing_sex=''
 					btn.removeEventListener('click', shake, false) // 移除事件
 					navigator.vibrate(1000); // 手机震动
 				}
