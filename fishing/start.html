@@ -88,13 +88,16 @@
 			var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 			// 握手函数
 			// 加入游戏
-			$.post(
+			function addgame(){
+				$.post(
 				"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
 					user: localStorage.getItem('wxdata'),
 				},
 				function(res) {
 					
 				})
+			}
+			addgame()
 
 			ws.onopen = function() {
 				//状态为1证明握手成功，然后把client自定义的名字发送过去
