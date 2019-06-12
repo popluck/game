@@ -87,15 +87,15 @@
 //			$('.warehouse_name')[0].innerText = nickname
 			var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 			// 握手函数
-			$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: localStorage.getItem('code')
-				},
-				function(res) {
-					alert(res)
-
-					localStorage.setItem('wxdata', res)
-				})
+//			$.get(
+//				"http://mq.soratech.cn/stores/public/game/index/openid", {
+//					code: localStorage.getItem('code')
+//				},
+//				function(res) {
+//					alert(res)
+//
+//					localStorage.setItem('wxdata', res)
+//				})
 			$.post(
 				"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
 					user: localStorage.getItem('wxdata'),
