@@ -174,7 +174,7 @@
 			}
 			// 按钮点击事件
 			function shake() {
-				alert(1)
+
 				console.log('点击数：' + a)
 				console.log('随机数：' + rand)
 				if(a == 1) {
@@ -197,7 +197,6 @@
 				// 发消息
 				if(a == rand) {
 					ws.send('{"type":"msg","content":"moveRope","room":"' + room + '"，"openid":"' + openid + '"}')
-					alert('{"type":"msg","content":"moveRope","room":"' + room + '"，"openid":"' + openid + '"}')
 				}
 				// 获得奖品
 				if(type == 'coupons') {
