@@ -1,4 +1,4 @@
-window.onload = function() {
+//window.onload = function() {
 
 
 	
@@ -36,4 +36,4 @@ window.onload = function() {
 		window.location.replace(url);
 	}
 
-}
+//}

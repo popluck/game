@@ -1,4 +1,7 @@
 // 钓鱼按钮
+window.onload=function(){
+	
+
 var btn = document.querySelector('.btn')
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
@@ -59,3 +62,4 @@ function imgrotate(){
 //	console.log(imgURL)
 //	console.log(imgXS)
 //},1000)
+}
