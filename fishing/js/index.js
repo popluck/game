@@ -1,6 +1,5 @@
 // 钓鱼按钮
 //window.onload=function(){
-	
 
 var btn = document.querySelector('.btn')
 btn.addEventListener('touchstart', function() {
