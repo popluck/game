@@ -4,13 +4,13 @@ window.onload = function() {
 	//		if(!wxdata) {
 	var code = getUrlKey("code");
 	if(code) {
-		alert(code)
+//		alert(code)
 		$.get(
 			"http://mq.soratech.cn/stores/public/game/index/openid", {
 				code: code
 			},
 			function(res) {
-				alert(res)
+//				alert(res)
 
 				localStorage.setItem('wxdata', res)
 			})
