@@ -31,23 +31,23 @@ function GetQueryString(name) {
 // 图片加载
 function imgload(){
 	for (var i=0;i<9;i++) {
-		$('.img1').eq(i).css('background-image','url(image/index/shouye_'+i+'.png)')
+		$('.img1').eq(i).css('background-image','url(image/index/shouye_'+(i+1)+'.png)')
 	}
 }
 imgload()
 // 轮换
 function imgrotate(){
-	imgXS = imgXS<9?imgXS+1:0
+	imgXS = imgXS<8?imgXS+1:0
 	$('.img1').eq(imgXS).animate({
 		'opacity':1,
 		'z-index':10
-	},500)
+	},70)
 	$('.img1').eq(imgXS).siblings('.img1').css({
 		'z-index':'-100',
 		'opacity':'0.5'
 	})
 }
-setInterval(imgrotate,500)
+setInterval(imgrotate,70)
 //		imgrotate()
 //		requestAnimationFrame(imgrotate)
 

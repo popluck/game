@@ -111,15 +111,16 @@
 				console.log(msg, 1)
 				// 类型改变
 				if(msg.data) {
-					var data = JSON.parse(msg.data).content;
-					console.log(data, 2)
+					var content = JSON.parse(msg.data).content;
+					console.log(content, 2)
 					try {
-						data = JSON.parse(data)
+						data = JSON.parse(content)
 						if(data.type == 'moveRope') {
 							window.location.href = "start_last.html"
 						}
 						if(data.prize) {
 							type = 'prize';
+							prize=data.prize[0]
 						}
 						if(data.coupons) {
 							type = 'coupons';
@@ -214,7 +215,7 @@
 					init()
 				}
 				if(type == 'prize') {
-					prize = 'prize' + String(Math.floor(Math.random() * 5 - 0.5) + 1)
+//					prize = 'prize' + String(Math.floor(Math.random() * 5 - 0.5) + 1)
 					img.src = "./imgaes/start/start_fish.png";
 					$('.model_gilf')[0].src = "imgaes/start_last/" + prize + '.png';
 					a = 1
