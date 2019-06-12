@@ -8,15 +8,6 @@ btn.addEventListener('touchstart', function() {
 btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 })
-$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: localStorage.getItem('code')
-				},
-				function(res) {
-					alert(res)
-
-					localStorage.setItem('wxdata', res)
-				})
 // 用户微信信息
 //var wxdata = localStorage.getItem('wxdata')
 //alert(wxdata)
