@@ -74,35 +74,26 @@
 			var fishing_name = ''; // 奖励微信昵称
 			var fishing_sex = ''; // 奖励微信性别
 			var fishing_coupons = 'couponsOne'; // 优惠券
-//			var wxdata = JSON.parse(localStorage.getItem('wxdata'))
-//			var openid = wxdata.openid; // 用户id
-//			var nickname = wxdata.nickname; // 用户昵称
-//			var sex = wxdata.sex; // 用户性别
-//			var head = wxdata.headimgurl // 用户图像
+			var wxdata = JSON.parse(localStorage.getItem('wxdata'))
+			var openid = wxdata.openid; // 用户id
+			var nickname = wxdata.nickname; // 用户昵称
+			var sex = wxdata.sex; // 用户性别
+			var head = wxdata.headimgurl // 用户图像
 			var room = localStorage.getItem('room')
 			var btn = $('.start_btn')[0];
 			var img = $('.start_fish')[0];
 			var a = 1; //点击数
 			var rand; //随机次数
-//			$('.warehouse_name')[0].innerText = nickname
+			$('.warehouse_name')[0].innerText = nickname
 			var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 			// 握手函数
-//			$.get(
-//				"http://mq.soratech.cn/stores/public/game/index/openid", {
-//					code: localStorage.getItem('code')
-//				},
-//				function(res) {
-//					alert(res)
-//
-//					localStorage.setItem('wxdata', res)
-//				})
+			// 加入游戏
 			$.post(
 				"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
 					user: localStorage.getItem('wxdata'),
 				},
 				function(res) {
-					alert(res)
-					console.log(1)
+					
 				})
 
 			ws.onopen = function() {
