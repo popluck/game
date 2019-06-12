@@ -67,7 +67,8 @@
 		<script src="./js/jquery-3.1.1.min.js"></script>
 		</script>
 		<script>
-			var type = ''; // 类型判断
+			window.onload=function(){
+				var type = ''; // 类型判断
 			var prize = ''; // 合成物品
 			var fishing_openid = ''; // 微信图像id
 			var fishing_img = ''; // 奖励着微信图像
@@ -299,6 +300,8 @@
 				btn.removeEventListener('click', shake, false) // 移除事件
 				navigator.vibrate(1000); // 手机震动
 			}
+			}
+			
 		</script>
 	</body>
 
