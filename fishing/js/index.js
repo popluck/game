@@ -19,7 +19,7 @@ btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 })
 // 门店id
-if(!localStorage.getItem('room')){
+if(localStorage.getItem('room')==0){
 localStorage.setItem('room',GetQueryString('id'))	
 }
 var imgXS=0
