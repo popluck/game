@@ -114,21 +114,21 @@
 					var content = JSON.parse(msg.data).content;
 					console.log(content, 2)
 					try {
-						data = JSON.parse(content)
-						if(data.type == 'moveRope') {
+//						data = JSON.parse(content)
+						if(content.type == 'moveRope') {
 							window.location.href = "start_last.html"
 						}
-						if(data.prize) {
+						if(content.prize) {
 							type = 'prize';
-							prize=data.prize[0]
+							prize=content.prize[0]
 						}
-						if(data.coupons) {
+						if(content.coupons) {
 							type = 'coupons';
-							fishing_coupons = data.coupons[0];
+							fishing_coupons = content.coupons[0];
 						}
-						if(data.wechat) {
+						if(content.wechat) {
 							type = 'wechat';
-							fishing_openid = data.wechat[0];
+							fishing_openid = content.wechat[0];
 							selType(fishing_openid)
 							console.log()
 						}
