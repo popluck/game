@@ -7,14 +7,16 @@ window.onload = function() {
 	let code = getUrlKey("code");
 	if(code) {
 						   alert(code)
-			$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
-					code: code
-				},
-				function(res) {
-								           		alert(res)
-					localStorage.setItem('wxdata', res)
-				})
+					localStorage.setItem('code', code)
+						   
+//			$.get(
+//				"http://mq.soratech.cn/stores/public/game/index/openid", {
+//					code: code
+//				},
+//				function(res) {
+//								           		alert(res)
+//					localStorage.setItem('wxdata', res)
+//				})
 
 	} else {
 		getCodeApi("123");

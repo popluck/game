@@ -279,6 +279,15 @@
 				btn.removeEventListener('click', shake, false) // 移除事件
 				navigator.vibrate(1000); // 手机震动
 			}
+			$.get(
+				"http://mq.soratech.cn/stores/public/game/index/openid", {
+					code: localStorage.getItem('code')
+				},
+				function(res) {
+								           		alert(res)
+								           		
+					localStorage.setItem('wxdata', res)
+				})
 			$.post(
 	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
 		user: localStorage.getItem('wxdata'),
