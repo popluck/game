@@ -279,6 +279,14 @@
 				btn.removeEventListener('click', shake, false) // 移除事件
 				navigator.vibrate(1000); // 手机震动
 			}
+			$.post(
+	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
+		user: localStorage.getItem('wxdata'),
+	},
+	function(res) {
+		alert(res)
+		console.log(1)
+	})
 		</script>
 	</body>
 

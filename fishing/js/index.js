@@ -1,5 +1,5 @@
 // 钓鱼按钮
-window.onload=function(){
+//window.onload=function(){
 	
 
 var btn = document.querySelector('.btn')
@@ -10,21 +10,21 @@ btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 })
 // 用户微信信息
-var wxdata = localStorage.getItem('wxdata')
+//var wxdata = localStorage.getItem('wxdata')
 //alert(wxdata)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))
 //alert(localStorage.getItem('room'))
 
 // 加入游戏
-$.post(
-	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
-		user: wxdata,
-	},
-	function(res) {
-		alert(res)
-		console.log(1)
-	})
+//$.post(
+//	"http://mq.soratech.cn/web_sock/public/index/index/user_insert", {
+//		user: wxdata,
+//	},
+//	function(res) {
+//		alert(res)
+//		console.log(1)
+//	})
 var imgURL=0;
 var imgXS=0
 var imgXS1=1
@@ -62,4 +62,4 @@ function imgrotate(){
 //	console.log(imgURL)
 //	console.log(imgXS)
 //},1000)
-}
+//}
