@@ -34,6 +34,8 @@ ws.onclose = function() {
 }
 //数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
 ws.onmessage = function(msg) {
+		console.log(msg, 2)
+	
 	// 类型改变
 	if(msg.data) {
 		var data = JSON.parse(msg.data).nrong;
@@ -88,7 +90,7 @@ function changProgress() {
 			"openid":openid
 		}
 		ws.send(JSON.stringify(sendDate))
-		alert(JSON.stringify(sendDate))
+		console.log(JSON.stringify(sendDate))
 	}
 	H = H + rerandom
 	if(H < 100) {

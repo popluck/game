@@ -108,10 +108,10 @@
 			}
 			//数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
 			ws.onmessage = function(msg) {
-				alert(msg, 1)
+				console.log(msg, 1)
 				// 类型改变
 				if(msg.data) {
-					var data = JSON.parse(msg.data).nrong;
+					var data = JSON.parse(msg.data).content;
 					console.log(data, 2)
 					try {
 						data = JSON.parse(data)

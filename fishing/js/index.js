@@ -1,6 +1,16 @@
+//window.requestAnimFrame = (function() {
+//return (
+//  window.requestAnimationFrame ||
+//  window.webkitRequestAnimationFrame ||
+//  window.mozRequestAnimationFrame ||
+//  window.oRequestAnimationFrame ||
+//  window.msRequestAnimationFrame ||
+//  function(callback, element) {
+//    window.setTimeout(callback, 1000 / 60)
+//  }
+//)
+//})()
 // 钓鱼按钮
-//window.onload=function(){
-
 var btn = document.querySelector('.btn')
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
@@ -10,9 +20,7 @@ btn.addEventListener('touchend', function() {
 })
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))
-var imgURL=0;
 var imgXS=0
-var imgXS1=1
 // 地址栏参数获取
 function GetQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -22,29 +30,30 @@ function GetQueryString(name) {
 }
 // 图片加载
 function imgload(){
-//	console.log($('#bkg').css('background-image'))
-//	$('.img1').eq(imgXS).css('background-image','url(image/index/shouye_'+imgURL+'.png)')
-//	$('.img1').eq(imgXS+1).css('background-image','url(image/index/shouye_'+(imgURL+1)+'.png)')
-//	$('.img1').eq(imgXS+2).css('background-image','url(image/index/shouye_'+(imgURL+2)+'.png)')
-	$('.img1').eq(imgXS1).css('background-image','url(image/index/shouye_'+(imgURL+1)+'.png)')
- 
-	imgURL=imgURL<99?imgURL+1:0
-
+	for (var i=0;i<9;i++) {
+		$('.img1').eq(i).css('background-image','url(image/index/shouye_'+i+'.png)')
+	}
 }
-//console.log($('.img1'))
+imgload()
 // 轮换
 function imgrotate(){
-	imgXS = imgXS<3?imgXS+1:0
-	$('.img1').css('z-index','-100')
-	$('.img1').eq(imgXS).css('z-index','10')
-	
+	imgXS = imgXS<9?imgXS+1:0
+	$('.img1').eq(imgXS).animate({
+		'opacity':1,
+		'z-index':10
+	},500)
+	$('.img1').eq(imgXS).siblings('.img1').css({
+		'z-index':'-100',
+		'opacity':'0.5'
+	})
 }
+setInterval(imgrotate,500)
+//		imgrotate()
+//		requestAnimationFrame(imgrotate)
 
-//	$('#bkg').css('background-image','url(image/index/shouye_'+imgURL+'.png)')
-//setInterval(function(){
-//	imgload()
-//	imgrotate()
-//	console.log(imgURL)
-//	console.log(imgXS)
-//},1000)
+//window.onload = function() {
+//(function animloop() {
+//  imgrotate()
+//  requestAnimFrame(animloop, window)
+//})()
 //}
