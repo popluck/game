@@ -135,7 +135,6 @@
 								type = 'wechat';
 								fishing_openid = content.wechat[0];
 								selType(fishing_openid)
-								console.log()
 							}
 						} catch(e) {}
 					}
@@ -234,6 +233,8 @@
 							$('.img1')[0].src = 'imgaes/start/框框2.png';
 							$('.img2')[0].src = fishing_img;
 							$('.warehouse_name')[0].innerText = fishing_name
+							console.log(fishing_name)
+							console.log(fishing_img)
 							a = 1
 						}
 						if(fishing_sex != sex) {
@@ -261,6 +262,7 @@
 								fishing_sex = data.sex;
 								fishing_img = data.head;
 								fishing_name = data.name;
+								console.log(fishing_name)
 								console.log(data)
 
 							} catch(e) {
