@@ -28,13 +28,7 @@ function GetQueryString(name) {
 	if(r != null) return unescape(r[2]);
 	return null;
 }
-// 图片加载
-function imgload(){
-	for (var i=0;i<9;i++) {
-		$('.img1').eq(i).css('background-image','url(image/index/shouye_'+(i+1)+'.png)')
-	}
-}
-imgload()
+
 // 轮换
 function imgrotate(){
 	imgXS = imgXS<8?imgXS+1:0
