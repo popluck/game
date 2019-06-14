@@ -1,4 +1,5 @@
-var H = 0;
+window.onload=function(){
+	var H = 0;
 var reRoratez = 0;
 var progressBar = document.querySelector('.progress');
 var btn = document.querySelector('.btn');
@@ -13,13 +14,14 @@ var fishing_name = ''; // 奖励微信昵称
 var fishing_sex = ''; // 奖励微信性别
 var fishing_coupons = 'couponsOne'; // 优惠券
 var wxdata = JSON.parse(localStorage.getItem('wxdata'))
-var openid = wxdata.openid; // 用户id
-var nickname = wxdata.nickname; // 用户昵称
-var sex = wxdata.sex; // 用户性别
-var head = wxdata.headimgurl // 用户图像
-var room = localStorage.getItem('room')
+var openid = ''; // 用户id    wxdata.openid
+var nickname = ''; // 用户昵称   wxdata.nickname
+var sex = ''; // 用户性别   wxdata.sex
+var head = '' // 用户图像   wxdata.headimgurl
+var room = ''  //  localStorage.getItem('room')
 var a = 1; //点击数
 var rand; //随机次数
+	var t=0;
 var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
 // 握手函数
 ws.onopen = function() {
@@ -131,8 +133,13 @@ function init() {
 	type = '';
 	navigator.vibrate(1000); // 手机震动
 }
-const imgMask = document.getElementsByTagName('img');
-imgMask.addEventListener('click', function (event) {
-    event.stopPropagation();
-    event.preventDefault();
-});
+// 波浪
+function wave(){
+	setInterval(function(){
+		t=(t==-100)?-0:t;
+		t-=2;
+		$('.boxH').animate({'bottom':t+'px'},110)
+	},100)
+}
+wave()
+}

@@ -35,13 +35,13 @@ function imgrotate(){
 	$('.img1').eq(imgXS).animate({
 		'opacity':1,
 		'z-index':10
-	},70)
+	},100)
 	$('.img1').eq(imgXS).siblings('.img1').css({
 		'z-index':'-100',
 		'opacity':'0.5'
 	})
 }
-setInterval(imgrotate,70)
+setInterval(imgrotate,100)
 //		imgrotate()
 //		requestAnimationFrame(imgrotate)
 

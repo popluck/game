@@ -8,17 +8,97 @@ body{
 #bkg{
 	width: 100%;
 	height: 100%;
-	background-image: url(../../image/start-fishing/钓鱼BG.jpg);
+	/*background-image: url(../../image/start-fishing/钓鱼BG.jpg);*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 }
+/*天空*/
+.sky{
+	width: 100%;
+	position: relative;	
+}
+.sky>img:nth-of-type(1) {
+	width: 100%;
+}
+/*岛*/
+.island{
+	width: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+}
+/*海*/
+.sea{
+	margin-top: -11px;
+	width: 100%;
+	background-image: url(../../image/start-fishing/海.png);
+	background-size: cover;
+	background-position: 100% 100%;
+	position: relative;
+	overflow: hidden;
+}
+.sea>img{
+	width: 100%;
+	visibility: hidden;
+}
+/*波纹*/
+.boxH{
+	width: 100%;
+	position: absolute;
+	background-attachment: fixed;
+	bottom: 0;
+}
+.boxH div{
+	width: 100%;
+	height: 4px;
+	margin-top: 2px;
+	background: url(../../image/start-fishing/海.png) 0 100px;
+	background-attachment: fixed;
+	opacity: 0.8;
+}
+/*浪*/
+.wave{
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	transform: translateY(-84px);
+	animation: langAn 3s infinite ease-in;
+}
+.wave>img{
+	width: 100%;
+}
+/*浪的动画*/
+@keyframes langAn{
+	0%{
+		transform: translateY(-84px);
+	}
+	30%{
+		transform: translateY(-44px);
+	}
+	100%{
+		transform: translateY(-84px);
+	}
+}
+/*沙滩*/
+.sendbeach{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	z-index: -10;
+}
+.sendbeach>img{
+	width: 100%;
+}
+/*鱼竿*/
 .fishing-rod{
 	width: 48%;
 	position: absolute;
 	bottom: 0;
 	left: 16%;
+	z-index: 10;
 }
 #turntable{
 	width:40%;
@@ -26,6 +106,7 @@ body{
 	display: inline-block;
 	bottom: 6%;
 	left: 44%;
+	z-index: 10;
 }
 .circle{
 	width: 100%;
@@ -73,6 +154,7 @@ body{
 	border-radius: 10px;
 	padding: 2px;
 	transform: rotateZ(180deg);
+	z-index: 10;
 }
 .progress-bg{
 	width: 100%;
