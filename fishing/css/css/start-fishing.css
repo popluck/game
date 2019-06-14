@@ -94,11 +94,19 @@ body{
 }
 /*鱼竿*/
 .fishing-rod{
-	width: 48%;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
-	left: 16%;
+	left: 0;
 	z-index: 10;
+	background-size: cover;
+	background-position: 100% 100%;
+	/*background-image: url(../../image/start-fishing/鱼竿.png);*/
+	transition: all;
+}
+.fishing-rod-1{
+	width: 80%;
+	visibility: hidden;
 }
 #turntable{
 	width:40%;

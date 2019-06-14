@@ -22,7 +22,11 @@ var room = ''  //  localStorage.getItem('room')
 var a = 1; //点击数
 var rand; //随机次数
 	var t=0;
+	var rodmath=0;
 var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
+// 动效
+wave()
+$('.fishing-rod').css('background-image','url(image/start-fishing/鱼竿1/yu1_0.png)')
 // 握手函数
 ws.onopen = function() {
 	//状态为1证明握手成功，然后把client自定义的名字发送过去
@@ -85,6 +89,10 @@ if(window.DeviceMotionEvent) {
 function changProgress() {
 	var rerandom = Math.floor(Math.random() * 20);
 	if(H==0){
+		rodmath=0;
+		rodstart()
+	H = H + rerandom
+		
 		var sendDate={
 			"type":"msg",
 			"content":"moveRope",
@@ -93,12 +101,19 @@ function changProgress() {
 		}
 		ws.send(JSON.stringify(sendDate))
 		console.log(JSON.stringify(sendDate))
+
 	}
-	H = H + rerandom
+
 	if(H < 100) {
+		rodmath=rodmath==9?6:rodmath;
+		rod()
 		progressBar.style.height = H + '%';
+	H = H + rerandom
+		
 	} else {
+		H=0
 		progressBar.style.height = '100%';
+		rodlast()
 		// 获得奖品
 		if(type == 'coupons') {
 			alert(type)
@@ -119,6 +134,8 @@ function changProgress() {
 		}
 
 	}
+
+	
 	
 }
 // 转盘
@@ -129,6 +146,7 @@ function turntable() {
 }
 // 初始化
 function init() { 
+	rodmath=0
 	H = 0;
 	type = '';
 	navigator.vibrate(1000); // 手机震动
@@ -141,5 +159,33 @@ function wave(){
 		$('.boxH').animate({'bottom':t+'px'},110)
 	},100)
 }
-wave()
+// 鱼竿
+function rod(){
+	$('.fishing-rod').css(
+		'background-image','url(image/start-fishing/鱼竿1/yu1_'+rodmath+'.png)'
+	)
+	rodmath++
+}
+// 鱼竿动作1
+function rodstart(){
+	var stac=setInterval(function(){
+		if(rodmath==6){
+			clearInterval(stac)
+		}else{
+			rod()
+		}
+		console.log(rodmath)
+	},70)
+}
+// 鱼竿动作3
+function rodlast(){
+	var stac2=setInterval(function(){
+		if(rodmath==14){
+			clearInterval(stac2)
+		}else{
+			rod()
+		}
+		console.log(rodmath)
+	},70)
+}
 }
