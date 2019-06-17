@@ -10,6 +10,7 @@
 //  }
 //)
 //})()
+
 // 钓鱼按钮
 var btn = document.querySelector('.btn')
 btn.addEventListener('touchstart', function() {
