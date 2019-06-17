@@ -21,7 +21,7 @@ console.log(typeof localStorage.getItem('wxdata'))
 
 	function getCodeApi(state) { //获取code   
 		let urlNow = encodeURIComponent(window.location.href);
-		let scope = 'snsapi_base'; //snsapi_userinfo   //静默授权 用户无感知snsapi_base
+		let scope = 'snsapi_userinfo'; //snsapi_userinfo   //静默授权 用户无感知snsapi_base
 		let appid = 'wxfd06f76da71ca6db';
 		let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${urlNow}&response_type=code&scope=${scope}&state=${state}#wechat_redirect`;
 		window.location.replace(url);
