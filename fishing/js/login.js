@@ -1,4 +1,5 @@
 window.onload = function() {
+	alert('开始')
 console.log(typeof localStorage.getItem('wxdata'))
 //	if(!localStorage.getItem('wxdata')) {
 		var code = getUrlKey("code");
