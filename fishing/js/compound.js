@@ -96,7 +96,7 @@ window.onload = function() {
 			judge(prize4, 'prize4', 3)
 			judge(prize5, 'prize5', 4)
 		} else {
-			alert('数量不足')
+//			alert('数量不足')
 		}
 	}
 }

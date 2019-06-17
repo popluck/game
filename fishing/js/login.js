@@ -1,23 +1,23 @@
 window.onload = function() {
 
-		var wxdata = localStorage.getItem('wxdata')
-			if(wxdata==0) {
-	var code = getUrlKey("code");
-	if(code) {
-//		alert(code)
-		$.get(
-			"http://mq.soratech.cn/stores/public/game/index/openid", {
-				code: code
-			},
-			function(res) {
-//				alert(res)
+	var wxdata = localStorage.getItem('wxdata')
+	if(typeof wxdata == undefined) {
+		var code = getUrlKey("code");
+		if(code) {
+			//		alert(code)
+			$.get(
+				"http://mq.soratech.cn/stores/public/game/index/openid", {
+					code: code
+				},
+				function(res) {
+					//				alert(res)
 
-				localStorage.setItem('wxdata', res)
-			})
-	} else {
-		getCodeApi("123");
-	}
+					localStorage.setItem('wxdata', res)
+				})
+		} else {
+			getCodeApi("123");
 		}
+	}
 	//	
 	function getUrlKey(name) { //获取url 参数
 		return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;

@@ -104,16 +104,16 @@ function changProgress() {
 
 	}
 
-	if(H < 100) {
+	if(H < 100 && H>0) {
 		rodmath=rodmath==9?6:rodmath;
 		rod()
 		progressBar.style.height = H + '%';
 	H = H + rerandom
 		
 	} else {
-		H=0
 		progressBar.style.height = '100%';
 		rodlast()
+		init()
 		// 获得奖品
 		if(type == 'coupons') {
 			alert(type)
@@ -149,6 +149,8 @@ function init() {
 	rodmath=0
 	H = 0;
 	type = '';
+	progressBar.style.height = '0';
+	
 	navigator.vibrate(1000); // 手机震动
 }
 // 波浪
