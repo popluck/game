@@ -8,7 +8,7 @@ console.log(typeof localStorage.getItem('wxdata'))
 					code: code
 				},
 				function(res) {
-					alert(res)
+//					alert(res)
 					localStorage.setItem('wxdata', res)
 				})
 		} else {
