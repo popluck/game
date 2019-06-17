@@ -1,22 +1,22 @@
 window.onload = function() {
 
-	if( localStorage.getItem('wxdata')=='') {
+//	if( localStorage.getItem('wxdata')=='') {
 		var code = getUrlKey("code");
 		if(code) {
-					alert(code)
+					console.log(code)
 			$.get(
 				"http://mq.soratech.cn/stores/public/game/index/openid", {
 					code: code
 				},
 				function(res) {
-									alert(res)
+									console.log(res)
 
 					localStorage.setItem('wxdata', res)
 				})
 		} else {
 			getCodeApi("123");
 		}
-	}
+//	}
 	//	
 	function getUrlKey(name) { //获取url 参数
 		return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
