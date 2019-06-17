@@ -1,6 +1,6 @@
 window.onload = function() {
-
-//	if( localStorage.getItem('wxdata')=='') {
+console.log(typeof localStorage.getItem('wxdata'))
+//	if() {
 		var code = getUrlKey("code");
 		if(code) {
 					console.log(code)
