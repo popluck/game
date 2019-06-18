@@ -22,6 +22,7 @@ window.onload = function() {
 	var rand; //随机次数
 	var t = 0;
 	var rodmath = 0;
+	var time=0;
 	$('.warehouse_name')[0].innerText = nickname
 
 	var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
@@ -85,6 +86,7 @@ window.onload = function() {
 	// 点击事件----进度条
 	function changProgress() {
 		var rerandom = Math.floor(Math.random() * 20);
+		time++
 		if(H == 0) {
 			rodmath = 0;
 			rodstart()
@@ -103,7 +105,10 @@ window.onload = function() {
 
 		if(H < 100 && H > 0) {
 			rodmath = rodmath == 9 ? 6 : rodmath;
-			rod()
+			if(time==3){
+			    rod()
+				time=0
+			}
 			progressBar.style.height = H + '%';
 			H = H + rerandom
 
