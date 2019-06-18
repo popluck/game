@@ -97,7 +97,7 @@ body{
 	width: 100%;
 	position: absolute;
 	bottom: 0;
-	left: -20%;
+	left: 0;
 	z-index: 10;
 	background-size: cover;
 	background-position: 100% 100%;
