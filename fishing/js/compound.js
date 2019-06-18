@@ -6,6 +6,7 @@ window.onload = function() {
 	var fishing_coupons = ''; // 优惠券
 	var wxdata = JSON.parse(localStorage.getItem('wxdata'))
 	var openid = wxdata.openid; // 用户id
+	var nickname = wxdata.nickname; // 用户昵称   wxdata.nickname
 	// 合成物品数量
 	var prize1 = 1;
 	var prize2 = 4;
