@@ -1,7 +1,7 @@
 window.onload = function() {
 	// 类型判断
-	var type = '';
-	var prize = ''; // 合成物品
+	var type = 'prize';
+	var prize = 'prize1'; // 合成物品
 	var fishing_openid = ''; // 微信图像
 	var fishing_coupons = ''; // 优惠券
 	var wxdata = JSON.parse(localStorage.getItem('wxdata'))
@@ -23,11 +23,11 @@ window.onload = function() {
 	setWh('.box3')
 	setWh('.box4')
 	setWh('.box5')
-	
+
 	rePost()
 	// 合成按钮触发事件
 	$('.box_0')[0].addEventListener('click', judgeNum)
-	
+
 	// 设置高度
 	function setWh(res) {
 		return $(res).css('height', $('#box').width())
@@ -89,11 +89,11 @@ window.onload = function() {
 					prize4 = data.prize4;
 					prize5 = data.prize5;
 					// 改变图标
-	judge(prize1, 'prize1', 0)
-	judge(prize2, 'prize2', 1)
-	judge(prize3, 'prize3', 2)
-	judge(prize4, 'prize4', 3)
-	judge(prize5, 'prize5', 4)
+					judge(prize1, 'prize1', 0)
+					judge(prize2, 'prize2', 1)
+					judge(prize3, 'prize3', 2)
+					judge(prize4, 'prize4', 3)
+					judge(prize5, 'prize5', 4)
 				}
 			}
 		)
