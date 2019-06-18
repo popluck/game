@@ -144,6 +144,8 @@ window.onload = function() {
 		}
 
 	}
+	// 弹出奖励
+	
 	// 转盘
 	function turntable() {
 		reRoratez = reRoratez + 360

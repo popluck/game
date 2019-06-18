@@ -1,6 +1,6 @@
 window.onload = function() {
 console.log(typeof localStorage.getItem('wxdata'))
-//	if(!localStorage.getItem('wxdata')) {
+	if(!localStorage.getItem('wxdata')) {
 		var code = getUrlKey("code");
 		if(code) {
 			$.get(
@@ -14,7 +14,7 @@ console.log(typeof localStorage.getItem('wxdata'))
 		} else {
 			getCodeApi("123");
 		}
-//	}
+	}
 	function getUrlKey(name) { //获取url 参数
 		return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
 	}
@@ -33,12 +33,15 @@ var btn = document.querySelector('.btn');
 var gift = document.querySelector('.gift')
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
-})
+},false)
 btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
-})
-$('.down')[0].addEventListener('click',function(){
+},false)
+btn.addEventListener('click',function(){
 	window.location.href='start-fishing.html'
+},false)
+$('.gift')[0].addEventListener('click',function(){
+	window.location.href='warehouse.html'
 },false)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))	

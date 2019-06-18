@@ -234,26 +234,7 @@
 				$('.center')[0].style.height = wid + "px";
 
 				rePost();
-				getText();
-				//  连接服务器
-								var ws = new WebSocket('ws://118.89.20.208:8585');
-				  //握手函数
-								ws.onopen = function() {
-									//状态为1证明握手成功，然后把client自定义的名字发送过去
-									if(ws.readyState == 1) {
-										ws.send('type=add&ming='+nickname+'&head='+head+'&role=2&sex='+sex+'&openid='+openid);
-									};
-								}
-								//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
-								ws.onclose = function() {
-									ws.send('type=remove&ming='+nickname+'&head='+head+'&role=2&sex='+sex+'&openid='+openid);
-									ws = false;
-									//						lct.appendChild(A.$$('<p class="c2">退出聊天室</p>'));
-								}
-								//数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
-								ws.onmessage = function(msg) {	
-									// 类型改变
-								}				
+				getText();			
 				// 点击合成 
 				$('.and_img1')[0].addEventListener('click', function() {
 					// 判断是否满足合成条件
