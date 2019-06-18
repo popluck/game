@@ -320,3 +320,71 @@ body{
 		transform: scale(1, 1);
 	}
 }
+.warehouse {
+	background: url("../imgaes/warehouse/BG.png");
+	background-size: cover;
+	color: #ffffff;
+	text-align: center;
+	width: 100%;
+	margin-top: -1px;
+	position: relative;
+}
+
+.warehouse_back {
+	width: 100%;
+	display: inline-block;
+}
+
+.warehouse_outside {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.warehouse_inside {
+	width: 100%;
+	margin-top: 10%;
+}
+
+.warehouse_title {
+	width: 80%;
+	display: inline-block;
+}
+.warehouse_img{
+	margin-top: 10%;
+	width: 60%;
+	display: inline-block;
+}
+.warehouse_btn{
+	width: 40%;
+	position: absolute;
+	left: 30%;
+	bottom: -20%;
+}
+.warehouse_gilf{
+	
+	width: 20%;
+	position: absolute;
+	left: 40%;
+	top: 32%;
+	transform: scale(0, 0);
+	border-radius: 50%;
+	/*background-image: url('http://thirdwx.qlogo.cn/mmopen/vi_32/ydQX6UbSCURDQJY1hFCvl8QUpep2mo5Cy2OG7WeUOXhkAGPvlOLBT6xm6dyIYvAsWO22HOFK89hMjPXhlia3yPQ/132');*/
+	animation: Fan2 1s ease-in-out 1s 1 alternate forwards;
+}
+.warehouse_gilf>img{
+	width: 100%;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.warehouse_name{
+	width:100%;
+	position: absolute;
+	top: 48%;
+	text-align: center;
+}
