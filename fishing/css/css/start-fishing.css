@@ -185,7 +185,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../imgaes/start/model.png);
+	background-image: url(../../image/start-fishing/model.png);
 	background-size: cover;
 	z-index: 10;
 	display: none;
@@ -196,7 +196,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../imgaes/start/model.png);
+	background-image: url(../../image/start-fishing/model.png);
 	z-index: 10;
 	display: none;
 	
@@ -207,7 +207,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../imgaes/start/model.png);
+	background-image: url(../../image/start-fishing/model.png);
 	z-index: 10;
 	display: block;
 }
@@ -217,7 +217,7 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../imgaes/start/model.png);
+	background-image: url(../../image/start-fishing/model.png);
 	background-size: cover;
 	z-index: 10;
 	display: none;

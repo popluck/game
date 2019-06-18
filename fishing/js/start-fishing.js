@@ -225,56 +225,6 @@ window.onload = function() {
 		$('.model4')[0].style.display = 'block';
 		btn.addEventListener('click', shake, false)
 	}
-	// 按钮点击事件
-	function shake() {
-
-		console.log('点击数：' + a)
-		console.log('随机数：' + rand)
-		if(a == 1) {
-			// 随机最大点击次数				
-			rand = Math.floor(Math.random() * 10 + 3);
-			img.src = "./imgaes/start/start_fish2.png";
-			$('.start_jiyou')[0].style.display = 'block'
-			a++
-		} else {
-			if(a % 2 == 0) {
-				$('.start_jiyou')[0].style.display = 'none'
-
-				img.src = "./imgaes/start/start_fish.png";
-			} else {
-				img.src = "./imgaes/start/start_fish2.png";
-				$('.start_jiyou')[0].style.display = 'block'
-			}
-			a++
-		}
-		// 发消息
-		if(a == rand) {
-			var data = {
-				"type": "msg",
-				"content": "moveRope",
-				"room": room,
-				"openid": openid
-			}
-			ws.send(JSON.stringify(data))
-			console.log(JSON.stringify(data))
-		}
-		// 获得奖品
-		if(type == 'coupons') {
-
-		}
-		if(type == 'prize') {
-
-		}
-		if(type == 'wechat' && fishing_sex != '') {
-			if(fishing_sex == sex) {
-
-			}
-			if(fishing_sex != sex) {
-
-			}
-
-		}
-	}
 	// 查询信息
 	function selType(id) {
 		$.post(
