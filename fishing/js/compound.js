@@ -1,4 +1,4 @@
-//window.onload = function() {
+window.onload = function() {
 	// 类型判断
 	var type = '';
 	var prize = ''; // 合成物品
@@ -127,4 +127,4 @@
 
 			})
 	};
-//}
+}
