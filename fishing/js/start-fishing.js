@@ -115,7 +115,7 @@ window.onload = function() {
 		} else {
 			progressBar.style.height = '100%';
 			rodlast()
-
+			console.log(type)
 			// 获得奖品
 			if(type == 'coupons') {
 				$('.model_gilf')[0].src = "imgaes/start_last/" + fishing_coupons + '.png';
