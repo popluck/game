@@ -266,7 +266,7 @@ body {
 }
 
 .warehouse {
-	background: url("../imgaes/warehouse/BG.png");
+	background: url(../image/compound/BG.png);
 	background-size: cover;
 	color: #ffffff;
 	text-align: center;
