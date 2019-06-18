@@ -1,6 +1,6 @@
 body {
 	font-family: 'Microsoft YaHei', sans-serif;
-	background-color: #f5d521;
+
 }
 
 html,
@@ -268,10 +268,10 @@ body {
 .warehouse {
 	background: url(../image/compound/BG.png);
 	background-size: cover;
-	color: #ffffff;
+
 	text-align: center;
 	width: 100%;
-	margin-top: -1px;
+	height: 100%;
 	position: relative;
 }
 
