@@ -37,6 +37,9 @@ btn.addEventListener('touchstart', function() {
 btn.addEventListener('touchend', function() {
 	btn.style.transform = 'scale(1)'
 })
+$('.down')[0].addEventListener('click',function(){
+	window.location.href='start-fishing.html'
+},false)
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))	
 var imgXS=1
