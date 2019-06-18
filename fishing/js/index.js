@@ -12,7 +12,8 @@
 //})()
 
 // 钓鱼按钮
-var btn = document.querySelector('.btn')
+var btn = document.querySelector('.btn');
+var gift = document.querySelector('.gift')
 btn.addEventListener('touchstart', function() {
 	btn.style.transform = 'scale(0.8)'
 })
@@ -21,7 +22,7 @@ btn.addEventListener('touchend', function() {
 })
 // 门店id
 localStorage.setItem('room',GetQueryString('id'))	
-var imgXS=0
+var imgXS=1
 // 地址栏参数获取
 function GetQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -32,17 +33,17 @@ function GetQueryString(name) {
 
 // 轮换
 function imgrotate(){
-	imgXS = imgXS<8?imgXS+1:0
+	imgXS = imgXS<9?imgXS+1:1
 	$('.img1').eq(imgXS).animate({
 		'opacity':1,
 		'z-index':10
-	},100)
+	},150)
 	$('.img1').eq(imgXS).siblings('.img1').css({
 		'z-index':'-100',
 		'opacity':'0.5'
 	})
 }
-setInterval(imgrotate,100)
+//setInterval(imgrotate,150)
 //		imgrotate()
 //		requestAnimationFrame(imgrotate)
 
