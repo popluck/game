@@ -118,7 +118,7 @@ window.onload = function() {
 			},
 			// 成功回调函数
 			function(msg) {
-
+				console.log(msg)
 				// 数量自减一
 				prize1--;
 				prize2--;
