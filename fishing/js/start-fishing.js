@@ -41,29 +41,24 @@ window.onload = function() {
 	}
 	//数据接收监听，接收服务器推送过来的信息，返回的数据给msg，然后进行显示
 	ws.onmessage = function(msg) {
-		console.log(msg, 2)
-
+		console.log(msg, 1)
 		// 类型改变
 		if(msg.data) {
-			var data = JSON.parse(msg.data).nrong;
-			console.log(data, 2)
+			var content = JSON.parse(msg.data).content;
+			console.log(content, 2)
 			try {
-				data = JSON.parse(data)
-				if(data.type == 'moveRope') {
-					window.location.href = "start_last.html"
-				}
-				if(data.prize) {
+				if(content.prize) {
 					type = 'prize';
+					prize = content.prize[0]
 				}
-				if(data.coupons) {
+				if(content.coupons) {
 					type = 'coupons';
-					fishing_coupons = data.coupons[0];
+					fishing_coupons = content.coupons[0];
 				}
-				if(data.wechat) {
+				if(content.wechat) {
 					type = 'wechat';
-					fishing_openid = data.wechat[0];
-					selType(fishing_openid)
-					console.log()
+					fishing_openid = content.wechat[0];
+					selType(content.wechat[0])
 				}
 			} catch(e) {}
 		}
