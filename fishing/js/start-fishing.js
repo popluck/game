@@ -87,9 +87,6 @@ window.onload = function() {
 		}, false);
 	}
 
-	function wind() {
-		$('.model3')[0].style.display = 'none'
-	}
 	// 点击事件----进度条
 	function changProgress() {
 		var rerandom = Math.floor(Math.random() * 20);
@@ -201,14 +198,14 @@ window.onload = function() {
 	$('.warehouse_btn')[0].addEventListener('click', sendTo, false)
 	$('.model_colse')[0].addEventListener('click', btninit, false)
 	$('.model_btn4')[0].addEventListener('click', btninit, false)
-	btn.addEventListener('click', shake, false)
+	btn.addEventListener('click', changProgress, false)
 
 	function btninit() {
 		$('.model1')[0].style.display = 'none';
 		$('.model2')[0].style.display = 'none';
 		$('.model4')[0].style.display = 'none';
 		window.location.href = "index.html?id=" + room
-		btn.addEventListener('click', shake, false)
+		btn.addEventListener('click', changProgress, false)
 	}
 
 	function sendTo() {
@@ -223,7 +220,7 @@ window.onload = function() {
 		ws.send(JSON.stringify(senddata))
 
 		$('.model4')[0].style.display = 'block';
-		btn.addEventListener('click', shake, false)
+		btn.addEventListener('click', changProgress, false)
 	}
 	// 查询信息
 	function selType(id) {
@@ -274,7 +271,7 @@ window.onload = function() {
 		progressBar.style.height = '0';
 		type = '';
 		fishing_sex = ''
-		btn.removeEventListener('click', shake, false) // 移除事件
+		btn.removeEventListener('click', changProgress, false) // 移除事件
 		navigator.vibrate(1000); // 手机震动
 	}
 
