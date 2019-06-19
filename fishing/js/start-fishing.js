@@ -203,7 +203,7 @@ window.onload = function() {
 	btn.addEventListener('click', changProgress, false)
 
 	function btninit() {
-		alert('即将返回上一页')
+//		alert('即将返回上一页')
 		window.history.go(-1); 
 //		$('.model1')[0].style.display = 'none';
 //		$('.model2')[0].style.display = 'none';
