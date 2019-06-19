@@ -203,10 +203,13 @@ window.onload = function() {
 	btn.addEventListener('click', changProgress, false)
 
 	function btninit() {
-		$('.model1')[0].style.display = 'none';
-		$('.model2')[0].style.display = 'none';
-		$('.model4')[0].style.display = 'none';
-		window.location.href = "index.html?id=" + room
+		alert('即将返回上一页')
+		window.history.go(-1); 
+//		$('.model1')[0].style.display = 'none';
+//		$('.model2')[0].style.display = 'none';
+//		$('.model4')[0].style.display = 'none';
+		
+//		window.location.href = "index.html?id=" + room
 	}
 
 	function sendTo() {
