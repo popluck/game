@@ -106,7 +106,7 @@ window.onload = function() {
 
 		if(H < 100 && H > 0) {
 			rodmath = rodmath == 9 ? 6 : rodmath;
-			if(time==3){
+			if(time==2){
 			    rod()
 				time=0
 			}

@@ -177,7 +177,7 @@ body{
 	height: 0%;
 	background: linear-gradient(to bottom ,#fff, #f67727);
 	border-radius: 10px;
-	transition: all 0.25s;
+	transition: all 0.1s;
 }
 .model1{
 	width: 100%;
