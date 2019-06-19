@@ -207,7 +207,6 @@ window.onload = function() {
 		$('.model2')[0].style.display = 'none';
 		$('.model4')[0].style.display = 'none';
 		window.location.href = "index.html?id=" + room
-		btn.addEventListener('click', changProgress, false)
 	}
 
 	function sendTo() {
