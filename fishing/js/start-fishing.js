@@ -86,19 +86,20 @@ window.onload = function() {
 	// 点击事件----进度条
 	function changProgress() {
 		var rerandom = Math.floor(Math.random() * 20);
-		time++
-		if(H == 0) {
-			rodmath = 0;
-			rodstart()
-			H = H + rerandom
-
-			var sendDate = {
+		var sendDate = {
 				"type": "msg",
 				"content": "moveRope",
 				"room": room,
 				"openid": openid
 			}
+		time++
+		if(H == 0) {
 			ws.send(JSON.stringify(sendDate))
+			
+			rodmath = 0;
+			rodstart()
+			H = H + rerandom
+
 			console.log(JSON.stringify(sendDate))
 
 		}
