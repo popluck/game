@@ -133,13 +133,13 @@ window.onload = function() {
 			}
 			if(type == 'wechat' && fishing_sex != '') {
 				if(fishing_sex == sex) {
-					$('.warehouse_img')[0].src = 'imgaes/start/基友卡.png';
+					$('.warehouse_img')[0].src = 'image/start-finshing/基友卡.png';
 					$('.img1')[0].src = 'imgaes/start/框框2.png';
 					$('.img2')[0].src = fishing_img;
 					$('.warehouse_name')[0].innerText = fishing_name
 				}
 				if(fishing_sex != sex) {
-					$('.warehouse_img')[0].src = 'imgaes/start/桃花卡.png';
+					$('.warehouse_img')[0].src = 'image/start-finshing/桃花卡.png';
 					$('.img1')[0].src = 'imgaes/start/框框.png';
 					$('.img2')[0].src = fishing_img;
 					$('.warehouse_name')[0].innerText = fishing_name
