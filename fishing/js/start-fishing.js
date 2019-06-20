@@ -93,6 +93,8 @@ window.onload = function() {
 			}
 		time++
 		if(H == 0) {
+
+
 			ws.send(JSON.stringify(sendDate))
 			
 			rodmath = 0;
@@ -218,7 +220,7 @@ window.onload = function() {
 			"name2": fishing_name
 		}
 		ws.send(JSON.stringify(senddata))
-
+		$('.model2')[0].style.display = 'none';
 		$('.model4')[0].style.display = 'block';
 		btn.addEventListener('click', changProgress, false)
 	}
