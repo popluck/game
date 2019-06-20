@@ -93,6 +93,8 @@ window.onload = function() {
 			}
 		time++
 		if(H == 0) {
+			var moveMath=Math.floor(Math.random() * 4)
+			$('.move_finsh')[0].src='image/start-fishing/鱼0'+moveMath+'.gif'
 			ws.send(JSON.stringify(sendDate))
 			
 			rodmath = 0;
