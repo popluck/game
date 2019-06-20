@@ -5,7 +5,6 @@ window.onload = function() {
 	var btn = document.querySelector('.btn');
 	var circle = document.querySelector('.circle');
 	var gan_bg = document.querySelector('.gan-bg');
-
 	var type = ''; // 类型判断
 	var prize = ''; // 合成物品
 	var fishing_openid = ''; // 微信图像id
@@ -25,7 +24,7 @@ window.onload = function() {
 	var time=0;
 	$('.warehouse_name')[0].innerText = nickname
 
-	var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器
+	var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器 
 	// 动效
 	wave()
 	$('.fishing-rod').css('background-image', 'url(image/start-fishing/鱼竿1/yu1_0.png)')
@@ -114,20 +113,23 @@ window.onload = function() {
 			H = H + rerandom
 
 		} else {
-			progressBar.style.height = '100%';
-			rodlast()
-			console.log(type)
-			// 获得奖品
+			btn.removeEventListener('click', changProgress, false) // 移除事件 禁止点击
+			progressBar.style.height = '100%'; // 进度条加满
+			rodlast() // 鱼竿摆动
+			popup_gift() //弹出奖励
+		}
+
+	} 
+	// 弹出奖励
+	function popup_gift(){
+		// 获得奖品
 			if(type == 'coupons') {
 				$('.model_gilf')[0].src = "imgaes/start_last/" + fishing_coupons + '.png';
 				$('.model1')[0].style.display = 'block';
-				init()
-
 			}
 			if(type == 'prize') {
 				$('.model_gilf')[0].src = "imgaes/start_last/" + prize + '.png';
 				$('.model1')[0].style.display = 'block';
-				init()
 			}
 			if(type == 'wechat' && fishing_sex != '') {
 				if(fishing_sex == sex) {
@@ -143,15 +145,8 @@ window.onload = function() {
 					$('.warehouse_name')[0].innerText = fishing_name
 				}
 				$('.model2')[0].style.display = 'block';
-				console.log(sex, fishing_sex, fishing_name)
-				init()
 			}
-
-		}
-
 	}
-	// 弹出奖励
-	
 	// 转盘
 	function turntable() {
 		reRoratez = reRoratez + 360
@@ -276,7 +271,6 @@ window.onload = function() {
 		progressBar.style.height = '0';
 		type = '';
 		fishing_sex = ''
-		btn.removeEventListener('click', changProgress, false) // 移除事件
 		navigator.vibrate(1000); // 手机震动
 	}
 
