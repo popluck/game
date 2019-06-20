@@ -246,6 +246,7 @@ body{
 	top: 10%;
 	left: 10%;
 	animation: moveF 3s ease-in 0s 1 alternate forwards;
+	z-index: 20;
 }
 @keyframes Fan {
 	0% {
