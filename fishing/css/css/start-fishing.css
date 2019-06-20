@@ -238,14 +238,14 @@ body{
 	display: inline-block;
 	position: relative;
 	opacity: 0;
-	animation: Fan 1s ease-in-out 3s 1 alternate forwards;
+	animation: Fan 1s ease-in-out 2s 1 alternate forwards;
 }
 .move_finsh{
 	width: 80%;
 	position: absolute;
 	top: 10%;
 	left: 10%;
-	animation: moveF 3s ease-in 0s 1 alternate forwards;
+	animation: moveF 2s ease-in 0s 1 alternate forwards;
 	z-index: 20;
 }
 @keyframes Fan {
@@ -316,7 +316,7 @@ body{
 	left: 25%;
 	top: 35%;
 	transform: scale(0, 0);
-	animation: Fan2 1s ease-in-out 4s 1 alternate forwards;
+	animation: Fan2 1s ease-in-out 3s 1 alternate forwards;
 }
 .model_gilf4 {
 	width: 54%;
@@ -324,7 +324,7 @@ body{
 	left: 23%;
 	top: 52%;
 	transform: scale(0, 0);
-	animation: Fan2 1s ease-in-out 4s 1 alternate forwards;
+	animation: Fan2 1s ease-in-out 3s 1 alternate forwards;
 }
 .model2 .model_gilf2 {
 	width: 60%;
@@ -332,7 +332,7 @@ body{
 	left: 20%;
 	top: 45%;
 	transform: scale(0, 0);
-	animation: Fan2 1s ease-in-out 4s 1 alternate forwards;
+	animation: Fan2 1s ease-in-out 3s 1 alternate forwards;
 }
 @keyframes Fan2 {
 	0% {
@@ -394,7 +394,7 @@ body{
 	transform: scale(0, 0);
 	border-radius: 50%;
 	/*background-image: url('http://thirdwx.qlogo.cn/mmopen/vi_32/ydQX6UbSCURDQJY1hFCvl8QUpep2mo5Cy2OG7WeUOXhkAGPvlOLBT6xm6dyIYvAsWO22HOFK89hMjPXhlia3yPQ/132');*/
-	animation: Fan2 1s ease-in-out 4s 1 alternate forwards;
+	animation: Fan2 1s ease-in-out 3s 1 alternate forwards;
 }
 .warehouse_gilf>img{
 	width: 100%;
