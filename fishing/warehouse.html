@@ -224,6 +224,8 @@
 				var wid = $('.and_outside')[0].offsetWidth;
 				// 内层容器
 				var and_inside = $('.and_inside');
+				$('.center')[0].style.height = wid + "px";
+				
 				// 设置外层容器高
 				$('.and_outside')[0].style.height = wid + "px";
 				$('.and_outside1')[0].style.height = wid + "px";
@@ -231,7 +233,7 @@
 				$('.and_outside3')[0].style.height = wid + "px";
 				$('.and_outside4')[0].style.height = wid + "px";
 				$('.and_outside5')[0].style.height = wid + "px";
-				$('.center')[0].style.height = wid + "px";
+
 
 				rePost();
 				getText();			
@@ -397,7 +399,7 @@
 						
 						if(i<doc.length){
 							$('.doc1')[i].innerText=doc[i].nickname
-							$('.doc2')[i].innerText=doc[i].cou pons	
+							$('.doc2')[i].innerText=doc[i].coupons	
 						}else{
 							$('li')[i].style.display='none'
 						}
