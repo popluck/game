@@ -170,6 +170,7 @@ body {
 .model3 img{
 	width: 60%;
 	margin-top: 30%;
+	box-sizing: border-box;
 }
 .model_outside {
 	width: 100%;
@@ -294,12 +295,14 @@ body {
 }
 
 .warehouse_title {
+	box-sizing: border-box;
 	margin-top: 3%;
 	width: 70%;
 	margin-left: 15%;
 	display: inline-block;
 }
 .warehouse_img{
+	box-sizing: border-box;
 	margin-top: 10%;
 	width: 60%;
 	display: inline-block;
@@ -360,6 +363,7 @@ body {
 	margin-left: 35%;
 	margin-top: 35%;
 	border-radius: 50%;
+	box-sizing: border-box;
 }
 
 .and_outside1 {
@@ -379,6 +383,7 @@ body {
 	transform: translateY(-110%);
 	border-radius: 50%;
 	text-align: center;
+	box-sizing: border-box;
 }
 .sum{
 	display: inline-block;
@@ -433,6 +438,7 @@ body {
 	margin-top: 35%;
 	transform: translateY(-110%);
 	border-radius: 50%;
+	box-sizing: border-box;
 }
 
 .and_outside3 {
@@ -451,6 +457,8 @@ body {
 	margin-top: 35%;
 	transform: translateY(-110%);
 	border-radius: 50%;
+	box-sizing: border-box;
+	
 }
 
 .and_outside4 {
@@ -469,6 +477,8 @@ body {
 	margin-top: 35%;
 	transform: translateY(-110%);
 	border-radius: 50%;
+	box-sizing: border-box;
+	
 }
 
 .and_outside5 {
@@ -487,6 +497,8 @@ body {
 	margin-top: 35%;
 	transform: translateY(-110%);
 	border-radius: 50%;
+	box-sizing: border-box;
+	
 }
 
 .and_img1 {
@@ -545,6 +557,8 @@ body {
 	height: 100%;
 	padding-top: 5%;
 	margin-left: 10%;
+	box-sizing: border-box;
+	
 }
 
 #marquee6 {
@@ -599,6 +613,8 @@ body {
 	position: absolute;
 	left: 30%;
 	margin-top:-5%;
+	box-sizing: border-box;
+	
 }
 .model_gilf1{
 	width: 60%;
