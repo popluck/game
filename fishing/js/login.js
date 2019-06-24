@@ -4,7 +4,7 @@ console.log(typeof localStorage.getItem('wxdata'))
 		var code = getUrlKey("code");
 		if(code) {
 			$.get(
-				"www.xiaohulaile.cn/stores/public/game/index/openid", {
+				"http://www.xiaohulaile.cn/stores/public/game/index/openid", {
 					code: code
 				},
 				function(res) {
