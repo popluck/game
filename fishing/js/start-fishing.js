@@ -227,7 +227,7 @@ window.onload = function() {
 	// 查询信息
 	function selType(id) {
 		$.post(
-			"http://mq.soratech.cn/web_sock/public/index/index/user_sel", {
+			"www.xiaohulaile.cn/web_sock/public/index/index/user_sel", {
 				'openid': id
 			},
 			function(msg) {
@@ -250,7 +250,7 @@ window.onload = function() {
 	// 发出请求添加数据
 	function addType() {
 		$.post(
-			'http://mq.soratech.cn/web_sock/public/index/index/user_update', // 请求地址
+			'www.xiaohulaile.cn/web_sock/public/index/index/user_update', // 请求地址
 			{
 				'data': [{ // 数据data
 					'type': type,

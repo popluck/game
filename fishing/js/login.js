@@ -4,7 +4,7 @@ console.log(typeof localStorage.getItem('wxdata'))
 		var code = getUrlKey("code");
 		if(code) {
 			$.get(
-				"http://mq.soratech.cn/stores/public/game/index/openid", {
+				"www.xiaohulaile.cn/stores/public/game/index/openid", {
 					code: code
 				},
 				function(res) {

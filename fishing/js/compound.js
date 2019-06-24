@@ -77,7 +77,7 @@ window.onload = function() {
 	function rePost() {
 		// 更新数据
 		$.post(
-			"http://mq.soratech.cn/web_sock/public/index/index/user_sel", {
+			"www.xiaohulaile.cn/web_sock/public/index/index/user_sel", {
 				openid: openid
 			},
 			function(msg) {
@@ -103,7 +103,7 @@ window.onload = function() {
 		// 添加数据
 		$.post(
 			// 请求地址
-			'http://mq.soratech.cn/web_sock/public/index/index/user_update',
+			'www.xiaohulaile.cn/web_sock/public/index/index/user_update',
 			// 数据data
 			{
 				data: [{
