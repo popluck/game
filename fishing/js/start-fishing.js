@@ -24,7 +24,7 @@ window.onload = function() {
 	var time=0;
 	$('.warehouse_name')[0].innerText = nickname
 
-	var ws = new WebSocket('ws://118.89.20.208:8585'); // 连接服务器 
+	var ws = new WebSocket('ws://118.25.125.47:8585'); // 连接服务器 
 	// 动效
 	wave()
 	$('.fishing-rod').css('background-image', 'url(image/start-fishing/鱼竿1/yu1_0.png)')
