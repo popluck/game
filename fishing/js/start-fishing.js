@@ -91,7 +91,6 @@ window.onload = function() {
 		var rerandom = Math.floor(Math.random() * 20);
 		time++
 		if(H == 0) {
-			console.log(0)
 			rodmath = 0;
 			rodstart()
 			H = H + rerandom
