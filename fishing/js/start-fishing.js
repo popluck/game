@@ -202,7 +202,7 @@ window.onload = function() {
 
 	function btninit() {
 //		alert('即将返回上一页')
-		window.history.go(-1); 
+		window.location.href='index.html'
 //		$('.model1')[0].style.display = 'none';
 //		$('.model2')[0].style.display = 'none';
 //		$('.model4')[0].style.display = 'none';
