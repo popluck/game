@@ -23,7 +23,6 @@ window.onload = function() {
 	var rodmath = 0;
 	var time=0;
 	$('.warehouse_name')[0].innerText = nickname
-
 	var ws = new WebSocket('ws://118.25.125.47:8585'); // 连接服务器 
 	// 动效
 	wave()
@@ -33,6 +32,14 @@ window.onload = function() {
 		//状态为1证明握手成功，然后把client自定义的名字发送过去
 		if(ws.readyState == 1) {
 			ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2","room":"' + room + '"}');
+			var sendDate = {
+				"type": "msg",
+				"content": "moveRope",
+				"room": room,
+				"openid": openid
+			}
+			ws.send(JSON.stringify(sendDate))
+		
 		};
 	}
 	//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
@@ -85,18 +92,9 @@ window.onload = function() {
 	// 点击事件----进度条
 	function changProgress() {
 		var rerandom = Math.floor(Math.random() * 20);
-		var sendDate = {
-				"type": "msg",
-				"content": "moveRope",
-				"room": room,
-				"openid": openid
-			}
+		
 		time++
 		if(H == 0) {
-
-
-			ws.send(JSON.stringify(sendDate))
-			
 			rodmath = 0;
 			rodstart()
 			H = H + rerandom
@@ -201,13 +199,7 @@ window.onload = function() {
 	btn.addEventListener('click', changProgress, false)
 
 	function btninit() {
-//		alert('即将返回上一页')
 		window.location.href='index.html'
-//		$('.model1')[0].style.display = 'none';
-//		$('.model2')[0].style.display = 'none';
-//		$('.model4')[0].style.display = 'none';
-		
-//		window.location.href = "index.html?id=" + room
 	}
 
 	function sendTo() {
@@ -268,7 +260,8 @@ window.onload = function() {
 
 	function init() { // 初始化
 		addType() // 请求添加数据
-		rodmath = 0
+		rodmath = 0;
+		time=0;
 		H = 0;
 		progressBar.style.height = '0';
 		type = '';

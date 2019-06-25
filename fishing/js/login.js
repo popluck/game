@@ -26,8 +26,6 @@ console.log(typeof localStorage.getItem('wxdata'))
 		let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${urlNow}&response_type=code&scope=${scope}&state=${state}#wechat_redirect`;
 		window.location.replace(url);
 	}
-	
-	
 	// 钓鱼按钮
 var btn = document.querySelector('.btn');
 var gift = document.querySelector('.gift')
