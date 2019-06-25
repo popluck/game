@@ -97,7 +97,6 @@ window.onload = function() {
 			H = H + rerandom
 		}
 		if(H < 100 && H > 0) {
-		window.location.href='index.html'
 			rodmath = rodmath == 9 ? 6 : rodmath;
 			if(time==2){
 			    rod()
@@ -193,7 +192,7 @@ window.onload = function() {
 	btn.addEventListener('click', changProgress, false)
 
 	function btninit() {
-		window.location.href='index.html'
+		window.location.href='index.html?id='+room
 	}
 
 	function sendTo() {
