@@ -98,9 +98,6 @@ window.onload = function() {
 			rodmath = 0;
 			rodstart()
 			H = H + rerandom
-
-			console.log(JSON.stringify(sendDate))
-
 		}
 
 		if(H < 100 && H > 0) {
