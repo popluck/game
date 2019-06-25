@@ -30,7 +30,14 @@ window.onload = function() {
 	// 握手函数
 	ws.onopen = function() {
 		//状态为1证明握手成功，然后把client自定义的名字发送过去
-		
+		ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2","room":"' + room + '"}');
+			var sendDate = {
+				"type": "msg",
+				"content": "moveRope",
+				"room": room,
+				"openid": openid
+			}
+		    ws.send(JSON.stringify(sendDate))
 	}
 	//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
 	ws.onclose = function() {
@@ -82,18 +89,9 @@ window.onload = function() {
 	// 点击事件----进度条
 	function changProgress() {
 		var rerandom = Math.floor(Math.random() * 20);
-
-		
 		time++
 		if(H == 0) {
-			ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2","room":"' + room + '"}');
-			var sendDate = {
-				"type": "msg",
-				"content": "moveRope",
-				"room": room,
-				"openid": openid
-			}
-		ws.send(JSON.stringify(sendDate))
+			console.log(0)
 			rodmath = 0;
 			rodstart()
 			H = H + rerandom
