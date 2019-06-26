@@ -94,7 +94,7 @@ $('.load')[0].style.display='none'
 			}
 		if(H == 0) {
 			console.log(H)
-			console.log(123)
+			console.log(JSON.stringify(sendDate))
 		    ws.send(JSON.stringify(sendDate))
 			rodmath = 0;
 			rodstart()
