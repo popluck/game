@@ -4,7 +4,8 @@ html,
 body {
 	width: 100%;
 	height: 100%;
-
+	font-size: 50px;
+	
 }
 body {
 	font-family: 'Microsoft YaHei', sans-serif;
@@ -18,6 +19,7 @@ body {
 	position: absolute;
 	z-index: 1000;
 	background: rgba(0,0,0,1);
+	font-size: 14px;
 }
 .load_side{
 	width: 100%;
@@ -354,6 +356,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+
+	
 }
 
 .warehouse_back {
