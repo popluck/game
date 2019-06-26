@@ -326,6 +326,14 @@ body{
 	animation: moveF 2s ease-in 0s 1 alternate forwards;
 	z-index: 20;
 }
+.Anwave{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 18;
+	animation: Anminwave 0.5s ease-in 0s 1 alternate forwards;
+}
 @keyframes Fan {
 	0% {
 		opacity: 0;
@@ -356,6 +364,14 @@ body{
 	}
 	100%{
 		transform: scale(0,0);
+	}
+}
+@keyframes Anminwave{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
 	}
 }
 .model_img {
