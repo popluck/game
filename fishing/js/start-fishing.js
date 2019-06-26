@@ -86,15 +86,15 @@ $('.load')[0].style.display='none'
 	function changProgress() {
 		var rerandom = Math.floor(Math.random() * 20);
 		time++
-		if(H == 0) {
-			console.log(H)
-			console.log(123)
-			var sendDate = {
+		var sendDate = {
 				"type": "msg",
 				"content": "moveRope",
 				"room": room,
 				"openid": openid
 			}
+		if(H == 0) {
+			console.log(H)
+			console.log(123)
 		    ws.send(JSON.stringify(sendDate))
 			rodmath = 0;
 			rodstart()
