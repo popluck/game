@@ -22,6 +22,8 @@ window.onload = function() {
 	var t = 0;
 	var rodmath = 0;
 	var time=0;
+$('.load')[0].style.display='none'
+	
 	$('.warehouse_name')[0].innerText = nickname
 	var ws = new WebSocket('ws://118.25.125.47:8585'); // 连接服务器 
 	// 动效

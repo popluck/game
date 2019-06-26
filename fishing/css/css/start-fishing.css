@@ -13,6 +13,85 @@ body{
 	background-size: cover;
 	position: relative;
 }
+/*加载*/
+.load{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1000;
+	background: rgba(0,0,0,1);
+}
+.load_side{
+	width: 100%;
+	position: absolute;
+	top: 30%;
+	color: #fff;
+}
+.load_img{
+	width: 20%;
+	position: relative;
+	left: 40%;
+}
+.Anmin1{
+	animation: onload1 1s ease 0s infinite;
+}
+.Anmin2{
+	animation: onload2 1s ease 0s infinite;
+}
+.Anmin3{
+	animation: onload3 1s ease 0s infinite;
+}
+@keyframes onload1{
+	0%{
+		opacity: 0;
+	}
+	25%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 1;
+	}
+	75%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+@keyframes onload2{
+	0%{
+		opacity: 0;
+	}
+	25%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	75%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+@keyframes onload3{
+	0%{
+		opacity: 0;
+	}
+	25%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+	75%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
 /*天空*/
 .sky{
 	width: 100%;
