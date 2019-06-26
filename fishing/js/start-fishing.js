@@ -33,7 +33,13 @@ $('.load')[0].style.display='none'
 	ws.onopen = function() {
 		//状态为1证明握手成功，然后把client自定义的名字发送过去
 		ws.send('{"type":"add","name":"' + nickname + '","openid":"' + openid + '","head":"' + head + '","sex":"' + sex + '","role":"2","room":"' + room + '"}');
-			
+		var sendDate = {
+				"type": "msg",
+				"content": "moveRope",
+				"room": room,
+				"openid": openid
+			}
+		    ws.send(JSON.stringify(sendDate))	
 	}
 	//握手失败或者其他原因连接socket失败，则清除so对象并做相应提示操作
 	ws.onclose = function() {
@@ -87,13 +93,7 @@ $('.load')[0].style.display='none'
 		var rerandom = Math.floor(Math.random() * 20);
 		time++
 		if(H == 0) {
-			var sendDate = {
-				"type": "msg",
-				"content": "moveRope",
-				"room": room,
-				"openid": openid
-			}
-		    ws.send(JSON.stringify(sendDate))
+			
 			rodmath = 0;
 			rodstart()
 			H = H + rerandom
