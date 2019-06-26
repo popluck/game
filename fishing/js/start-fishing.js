@@ -87,6 +87,8 @@ $('.load')[0].style.display='none'
 		var rerandom = Math.floor(Math.random() * 20);
 		time++
 		if(H == 0) {
+			console.log(H)
+			console.log(123)
 			var sendDate = {
 				"type": "msg",
 				"content": "moveRope",
